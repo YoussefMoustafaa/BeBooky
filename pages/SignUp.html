@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+</head>
+<body>
+    <h1>Sign Up to the Online Library</h1>
+    <form>
+        <div>
+            <label>Username</label>
+            <br>
+            <input type = "text" required>
+        </div>
+        <div>
+            <label>Password</label>
+            <br>
+            <input type = "password" required minlength = "8" maxlength = "20">
+        </div>
+        <div>
+            <label>Confirm Password</label>
+            <br>
+            <input type = "password" required minlength = "8" maxlength = "20">
+        </div>
+        <div>
+            <label>Email Address</label>
+            <br>
+            <input type = "email" required>
+        </div>
+        <div>
+            <input id = "isAdmin" type="checkbox" name = "User Type" value = "Admin">
+            <label for = "isAdmin">Admin</label>
+        </div>
+        <input type="submit" value = "Sign Up">
+    </form>
+    <div>
+    Already have an account?
+    <br>
+    Login as <a href = "AdminLogin.html">Admin</a> or <a href = "UserLogin.html">User</a>
+    </div>
+</body>
+</html>
