@@ -27,6 +27,7 @@
     --accent: #134E4A;
     --accent700: #0F766E;
     --accent600: #0D9488;
+    --accent500: #14b8a6;
     --dark-grey: #57534E;
 }
 
@@ -75,6 +76,12 @@ a {
     color: #ffffff;
     padding: 1em;
     border-radius: 10px;
+    font-weight: 500;
+    transition: all 0.1s ease-in-out;
+}
+
+#get-started-btn:hover {
+    background-color: var(--accent600);
 }
 
 #login-btn {
@@ -150,6 +157,11 @@ header {
 
 .cta-borrow-now {
     background-color: var(--accent700);
+    transition: all 0.2s ease-in-out;
+}
+
+.cta-borrow-now:hover {
+    background-color: var(--accent600);
 }
 
 .cta-explore {
@@ -157,6 +169,13 @@ header {
     border: 2px solid var(--accent700);
     font-size: 13px;
     background-color: #ffffff;
+    transition: all 0.2s ease-in-out;
+}
+
+.cta-explore:hover {
+    color: #ffffff;
+    border: none;
+    background-color: var(--accent700);
 }
 
 .scroll-item {
