@@ -24,6 +24,7 @@
 }
 html , body {
     margin: 0;
+    height: 100%;
 }
 @font-face {
     font-family: myfont;
@@ -40,7 +41,7 @@ html , body {
 }
 #left{
     width:40%;
-    height: 120vh;
+    height: 100%;
     float: left;
     background-color: var(--S100);
 }
@@ -92,7 +93,7 @@ input{
     font-family: myfont , serif;
     color: black;
     margin: 20px 0px 0px 75px ;
-
+    outline: none;
     /* border-color: var(--T600); */
     /* border-radius: 5px; */
     font-size: 15px;
