@@ -1,3 +1,7 @@
+@font-face {
+    font-family: myfont;
+    src: url(../Bevan/Bevan-Regular.ttf);
+}
 * {
     outline: none;
     margin: 0;

@@ -1,0 +1,128 @@
+:root{
+    --T50:  #F0FDFA;
+    --T100: #CCFBF1;
+    --T200: #99F6E4;
+    --T300: #5EEAD4;
+    --T400: #2DD4BF;
+    --T500: #14B8A6;
+    --T600: #0D9488;
+    --T700: #0F766E;
+    --T800: #115E59;
+    --T900: #134E4A;
+    --T950: #042F2E;
+    --S50:  #FAFAF9;
+    --S100: #F5F5F4;
+    --S200: #E7E5E4;
+    --S300: #D6D3D1;
+    --S400: #A8A29E;
+    --S500: #78716C;
+    --S600: #57534E;
+    --S700: #44403C;
+    --S800: #292524;
+    --S900: #1C1917;
+    --S950: #0C0A09;
+}
+html , body {
+    margin: 0;
+    height: 100%;
+}
+@font-face {
+    font-family: myfont;
+    src: url(../fonts/Lato/Lato-Black.ttf);
+    
+}
+#left{
+    width: 45%;
+    float: left;
+}
+h2{
+    width: 30%;
+    margin: 3% 0% 1% 3%;
+    font-family: myfont;
+    font-size: 35px;
+    border-right: 0px;
+    color: var(--T600);
+}
+#imgFrame{
+    width: 70%;
+    height: 600px;
+    padding: 2%;
+    box-shadow: 0px 0px 10px var(--T600,0.1);
+    margin: 40px 40px 0 40px;
+}
+#img{
+    width: 99%;
+    height: 99%;
+    /* margin-right: 6px; */
+}
+#bookName{
+    padding-top: 8%;
+    padding-bottom: 0px;
+    font-family: myfont;
+    font-size: 30px;
+    color: var(--T600);
+    margin-bottom: 2%;
+}
+#rat{
+    font-size: 20px;
+}
+#det{
+    margin-top: 5%;
+    margin-bottom: 3%;
+    font-family: myfont;
+    font-size: 32px;
+    color: var(--T600);
+}
+/* #rightImg{
+    float: right;
+    width: 400px;
+    
+} */
+#right{
+    background-color: white;
+    background-size: 50%;
+    height: 800px;
+    width: 55%;
+    float: right;
+    background-image: url(../images/6888606_copy-removebg-preview.png);
+    background-repeat: no-repeat;
+    background-position:115% 94%;
+}
+b{
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+button{
+    margin-top: 10%;
+    font-size: 20px;
+    /* margin-left: 30%; */
+    color :white;
+    background-color: var(--T600);
+    border-style: none;
+    width: 30%;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 15px;
+}
+#author{
+    margin-bottom: 3%;
+    font-size: 20px;
+}
+#pages{
+    margin-bottom: 3%;
+    font-size: 20px;
+}
+#cat{
+    margin-bottom: 4%;
+    font-size: 20px;
+}
+#bookLabel{
+    margin-bottom: 2%;
+}
+#desc{
+    margin-right: 40%;
+    font-size: 20px;
+}
+hr{
+    margin-right: 5%;
+}
