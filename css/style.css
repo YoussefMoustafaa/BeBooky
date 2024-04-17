@@ -1,3 +1,7 @@
+@font-face {
+    font-family: myfont;
+    src: url(../Bevan/Bevan-Regular.ttf);
+}
 * {
     outline: none;
     margin: 0;
@@ -33,8 +37,14 @@ nav li {
 }
 
 #header-title {
-    font-size: 38px;
+    padding: 0px 50px 0px 0px;
+    font-family: myfont, serif;
+    font-weight: bold;
+    font-style: normal;
+    color: #a16207;
+    font-size: 3.5vw;
 }
+   
 
 #search-bar {
     width: 180px;
