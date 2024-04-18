@@ -157,6 +157,7 @@ header {
     width: 125px;
     height: 53px;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .cta-borrow-now {
@@ -190,6 +191,7 @@ header {
     justify-content: center;
     align-items: center;
     gap: 3px;
+    cursor: pointer;
 }
 
 .scroll-item p {

@@ -24,7 +24,16 @@ class Book {
             this.isBorrowed = isBorrowed;
         }
     
-    
+}
+
+
+class User {
+    constructor(userID, username, password, isAdmin) {
+        this.userID = userID;
+        this.username = username;
+        this.password = password;
+        this.isAdmin = isAdmin;
+    }
 }
 
 let book1Img = './images/The Alchemist by Paulo Coelho - BookBub.jpg'
@@ -94,12 +103,30 @@ var booksList = [
     book3
 ]
 
+const bookListSection = document.getElementById('book-list')
+
+
+bookListSection.addEventListener('click', function (event) {
+    if (event.target.id) {
+        // window.location.href = `./book.html?id=${event.target.id}`
+
+        let selectedBook = booksList.filter(book => {
+            return book.id == event.target.id
+        })[0]
+
+        sessionStorage.setItem('selectedBook', JSON.stringify(selectedBook))
+        
+        window.location.href = '../bookdetails/habit.html'
+
+        JSON.parse(sessionStorage.getItem('selectedBook'))
+    }
+})
 
 
 function getBooks() {
     let booksHtml = booksList.map(book => {
         return `<div class="book-item">
-        <img src="${book.bookCover}" alt="${book.name} book">
+        <img src="${book.bookCover}" alt="${book.name} book" id="${book.id}">
         <h3>${book.name}</h3>
         <p>${book.author}</p>
         </div>`
@@ -109,8 +136,8 @@ function getBooks() {
 }
 
 
+
 function renderBooks() {
-    const bookListSection = document.getElementById('book-list')
     bookListSection.innerHTML = getBooks()
 }
 
