@@ -35,6 +35,7 @@
     --dark-grey: #57534E;
     --T50:  #F0FDFA;
     --T100: #CCFBF1;
+    --T100-bg: rgba(204, 251, 241, 0.952);
     --T200: #99F6E4;
     --T300: #5EEAD4;
     --T400: #2DD4BF;
@@ -80,6 +81,10 @@ nav {
     padding: 1.25em 3em;
 }
 
+.bg-nav-bar {
+    background-color: var(--T500);
+}
+
 #menu-links {
     font-weight: 500;
     font-size: 17px;
@@ -113,6 +118,15 @@ a {
 
 #login-btn {
     color: var(--accent);
+    font-weight: 600;
+}
+
+#log-out-btn {
+    background-color: #ffffff;
+    color: var(--accent700);
+    border: 2px solid var(--accent600);
+    border-radius: 5px;
+    padding: 0.6em 1em;
     font-weight: 600;
 }
 
