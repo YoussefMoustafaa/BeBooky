@@ -33,6 +33,28 @@
     --accent600: #0D9488;
     --accent500: #14b8a6;
     --dark-grey: #57534E;
+    --T50:  #F0FDFA;
+    --T100: #CCFBF1;
+    --T200: #99F6E4;
+    --T300: #5EEAD4;
+    --T400: #2DD4BF;
+    --T500: #14B8A6;
+    --T600: #0D9488;
+    --T700: #0F766E;
+    --T800: #115E59;
+    --T900: #134E4A;
+    --T950: #042F2E;
+    --S50:  #FAFAF9;
+    --S100: #F5F5F4;
+    --S200: #E7E5E4;
+    --S300: #D6D3D1;
+    --S400: #A8A29E;
+    --S500: #78716C;
+    --S600: #57534E;
+    --S700: #44403C;
+    --S800: #292524;
+    --S900: #1C1917;
+    --S950: #0C0A09;
 }
 
 body {
@@ -60,6 +82,7 @@ nav {
 
 #menu-links {
     font-weight: 500;
+    font-size: 17px;
 }
 
 #menu-links a {
@@ -235,4 +258,5 @@ header {
 .book-item img {
     width: 175px;
     height: 260px;
+    cursor: pointer;
 }

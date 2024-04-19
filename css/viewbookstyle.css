@@ -50,7 +50,7 @@ h2{
     box-shadow: 0px 0px 10px var(--T600,0.1);
     margin: 40px 40px 0 40px;
 }
-#img{
+#book-details-img{
     width: 99%;
     height: 99%;
     /* margin-right: 6px; */
@@ -80,13 +80,13 @@ h2{
 } */
 #right{
     background-color: white;
-    background-size: 50%;
+    background-size: 35%;
     height: 800px;
     width: 55%;
     float: right;
     background-image: url(../images/6888606_copy-removebg-preview.png);
     background-repeat: no-repeat;
-    background-position:115% 94%;
+    background-position:105% 94%;
 }
 b{
     font-size: 22px;
