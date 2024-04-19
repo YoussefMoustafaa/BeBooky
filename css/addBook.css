@@ -40,9 +40,14 @@ html , body {
     display: inline-block;
 }
 #left{
+    background-image: url(../images/Screenshot\ 2024-04-18\ at\ 9.07.32\ PM.png);
+    background-size: 44% 100% ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     width:40%;
-    height: 100%;
+    height: 190vh;
     float: left;
+    margin-top: -20px;
     background-color: var(--S100);
 }
 h2{
@@ -51,24 +56,36 @@ h2{
     font-weight: bold;
     font-style: normal;
     color: black;
-    padding:50px;
+    padding:50px 0px 5px 50px;
     font-size: 200%;
 }
-#rightTitle{
-    margin-left: 30px 40px;
-    padding:50px;
+#leftTitle{
+    margin-left: 30px;
+    padding:50px 50px 25px 30px;
     color: var(--T900);
     font-family: myfont , serif;
     font-weight: bold;
     font-style: normal;
     font-size: 200%;
 }
-#rightImg{
-    padding-left: 100px;
-    width: 65%;
+
+
+#leftImg{
+    padding-left: 70px;
+    width: 80%;
     height: 55%;
 }
+
+#leftText{
+    padding :10px 0px 0 80px;
+    font-family: myfont , serif;
+    font-size: 30px;
+    margin-right: 50px;
+    color:var(--T900);
+    
+}
 #save{
+    font-family: myfont;
     font-size: 20px;
     margin-top: 5%;
     margin-left: 40%;
@@ -150,6 +167,7 @@ textarea{
     width:50%;
     float: left;
     margin-bottom: 25px;
+    margin-top: 50px;
     /* margin-right: 0px;
     padding-right: 0px; */
 }
@@ -157,11 +175,13 @@ textarea{
     margin-bottom: 25px;
     width: 50%;
     float:right;
+    margin-top: 50px;
 }
 #bid{
     width:50%;
     float: left;
     margin-bottom: 25px;
+    margin-top: 50px;
     /* margin-right: 0px;
     padding-right: 0px; */
 }
@@ -169,23 +189,45 @@ textarea{
     margin-bottom: 25px;
     width: 50%;
     float:right;
+    margin-top: 50px;
 }
 #cat{
     width:50%;
     float: left;
     margin-bottom: 25px;
+    margin-top: 50px;
     /* margin-right: 0px;
     padding-right: 0px; */
 }
 #rat{
     margin-bottom: 25px;
+    margin-top: 50px;
     width: 50%;
     float:right;
 }
-    
-#info{
-    padding :30px 0px 0 80px;
-    font-family: myfont , serif;
-    font-size: 40px;
-    color:var(--T900);
+#imgFrame{
+    width: 40%;
+    height: 350px;
+    padding: 2%;
+    box-shadow: 0px 0px 10px var(--T900,0.1);
+    margin: 40px 40px 30px 70px;
+}    
+#img{
+    width: 99%;
+    height: 99%;
+    /* margin-right: 6px; */
 }
+#rightImg input{
+    display: none;
+}
+#rightImg label{
+    color: white;
+    font-family: myfont;
+    font-size: 100%; 
+    background-size: 500px;
+    background-color: var(--T800);
+    border-radius: 10px;
+    padding: 15px ;
+    margin-bottom: 250px;
+}
+
