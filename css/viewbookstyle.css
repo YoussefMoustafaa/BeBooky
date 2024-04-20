@@ -37,6 +37,8 @@ html , body {
     
 }
 #left{
+    position: fixed;
+    margin-top: 5em;
     width: 45%;
     float: left;
 }
@@ -84,6 +86,7 @@ h2{
     
 } */
 #right{
+    margin-top: 5em;
     background-color: white;
     background-size: 35%;
     height: 800px;
