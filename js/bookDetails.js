@@ -36,6 +36,6 @@ function renderBookDetails() {
 
 renderBookDetails()
 
-let header = document.getElementById('nav-bar')
+let navBar = document.getElementById('nav-bar')
 
-header.innerHTML = renderNavBar(usersList[1])
+navBar.innerHTML = renderNavBar(usersList[1])

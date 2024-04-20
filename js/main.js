@@ -1,4 +1,5 @@
 import { booksList } from "../modules/books.js"
+import { renderNavBar } from "../modules/navBar.js"
 
 
 const bookListSection = document.getElementById('book-list')
@@ -42,3 +43,6 @@ function renderBooks() {
 
 renderBooks()
 
+let navBar = document.getElementById('nav-bar')
+
+navBar.innerHTML = renderNavBar(null)
