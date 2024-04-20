@@ -177,18 +177,21 @@ textarea{
     margin-top: 50px;
     /* margin-right: 0px;
     padding-right: 0px; */
+    display: grid;
 }
 #auname{
     margin-bottom: 25px;
     width: 50%;
     float:right;
     margin-top: 50px;
+    display: grid;
 }
 #bid{
     width:50%;
     float: left;
     margin-bottom: 25px;
     margin-top: 50px;
+    display: grid;
     /* margin-right: 0px;
     padding-right: 0px; */
 }
@@ -197,12 +200,14 @@ textarea{
     width: 50%;
     float:right;
     margin-top: 50px;
+    display: grid;
 }
 #cat{
     width:50%;
     float: left;
     margin-bottom: 25px;
     margin-top: 50px;
+    display: grid;
     /* margin-right: 0px;
     padding-right: 0px; */
 }
@@ -211,6 +216,7 @@ textarea{
     margin-top: 50px;
     width: 50%;
     float:right;
+    display: grid;
 }
 #imgFrame{
     width: 40%;
