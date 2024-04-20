@@ -55,6 +55,7 @@ html , body {
     height: 140%;
     float: left;
     background-color: var(--S100);
+    
 }
 h2{
     margin-left: 20px;
@@ -68,12 +69,13 @@ h2{
 #leftTitle{
     margin-left: 30px;
     margin-bottom: 1em;
-    padding:50px 50px 15px 30px;
+    padding:50px 50px 0px 30px;
     color: var(--T900);
     font-family: myfont , serif;
     font-weight: bold;
     font-style: normal;
     font-size: 200%;
+    max-height: 200px;
 }
 
 
@@ -81,6 +83,8 @@ h2{
     padding-left: 70px;
     width: 75%;
     height: 40%;
+    max-height: 400px;
+    
 }
 
 #leftText{
