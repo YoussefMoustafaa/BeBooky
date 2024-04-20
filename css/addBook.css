@@ -35,12 +35,12 @@ html , body {
     width: 60%;
     height: 120vh;
     float: right;
-    /* background-color: var(--T2  00); */
+    background-color: var(--T200);
     background-color: white;
     display: inline-block;
 }
 #left{
-    background-image: url(../images/Screenshot\ 2024-04-18\ at\ 9.07.32\ PM.png);
+    /* background-image: url(../images/Screenshot\ 2024-04-18\ at\ 9.07.32\ PM.png);
     background-size: 44% 100% ;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -48,6 +48,12 @@ html , body {
     height: 190vh;
     float: left;
     margin-top: -20px;
+    background-color: var(--S100); */
+    position: fixed;
+    /* margin-top: 90px; */
+    width:40%;
+    height: 140%;
+    float: left;
     background-color: var(--S100);
 }
 h2{
@@ -61,7 +67,8 @@ h2{
 }
 #leftTitle{
     margin-left: 30px;
-    padding:50px 50px 25px 30px;
+    margin-bottom: 1em;
+    padding:50px 50px 15px 30px;
     color: var(--T900);
     font-family: myfont , serif;
     font-weight: bold;
@@ -72,12 +79,12 @@ h2{
 
 #leftImg{
     padding-left: 70px;
-    width: 80%;
-    height: 55%;
+    width: 75%;
+    height: 40%;
 }
 
 #leftText{
-    padding :10px 0px 0 80px;
+    padding :40px 0px 0 80px;
     font-family: myfont , serif;
     font-size: 30px;
     margin-right: 50px;

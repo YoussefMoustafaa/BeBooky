@@ -51,11 +51,11 @@ h2{
     color: var(--T600);
 }
 #imgFrame{
-    width: 70%;
+    width: 65%;
     height: 600px;
     padding: 2%;
-    box-shadow: 0px 0px 10px var(--T600,0.1);
-    margin: 40px 40px 0 40px;
+    box-shadow: 0px 0px 10px var(--S950,0.1);
+    margin: 70px 40px 0 90px;
 }
 #book-details-img{
     width: 99%;
