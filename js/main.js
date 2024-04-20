@@ -4,22 +4,25 @@ import { renderNavBar } from "../modules/navBar.js"
 
 const bookListSection = document.getElementById('book-list')
 
+export function viewBookDetails(event) {
 
-if (bookListSection) {
-    bookListSection.addEventListener('click', function (event) {
-        if (event.target.id) {
-            // window.location.href = `./book.html?id=${event.target.id}`
-            
-            window.location.href = '../pages/bookDetails.html'
-            let selectedBook = booksList.filter(book => {
-                return book.id == event.target.id
-            })[0]
+    window.location.href = '../pages/bookDetails.html'
+    let selectedBook = booksList.filter(book => {
+        return book.id == event.target.id
+    })[0]
     
-            sessionStorage.setItem('selectedBook', JSON.stringify(selectedBook))
-            
-        }
-    })
+    sessionStorage.setItem('selectedBook', JSON.stringify(selectedBook))
 }
+
+
+
+document.addEventListener('click', function (event) {
+    if (event.target.id) {
+        // window.location.href = `./book.html?id=${event.target.id}`
+        viewBookDetails(event)
+    }
+})
+
 
 
 function getBooks() {
@@ -36,13 +39,14 @@ function getBooks() {
 
 
 
-function renderBooks() {
-    if (bookListSection)
-        bookListSection.innerHTML = getBooks()
+export function renderBooks(bookListConatiner) {
+    if (bookListConatiner)
+        bookListConatiner.innerHTML = getBooks()
 }
 
-renderBooks()
+renderBooks(bookListSection)
 
 let navBar = document.getElementById('nav-bar')
 
-navBar.innerHTML = renderNavBar(null)
+if (navBar)
+    navBar.innerHTML = renderNavBar(null)

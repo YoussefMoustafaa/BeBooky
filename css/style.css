@@ -248,9 +248,9 @@ header {
 }
 
 
-/* book item */
+/* book list */
 
-#book-list {
+.main-book-list {
     margin-top: 20px;
     padding: 1em;
     display: grid;
