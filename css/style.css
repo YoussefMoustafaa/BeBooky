@@ -17,6 +17,7 @@ body {
 /* navigation */
 
 nav ul {
+    /* margin-bottom: 5em; */
     margin: 0;
     padding: 0;
     display: inline-block;
@@ -24,7 +25,8 @@ nav ul {
 }
 
 nav {
-    margin-top: -2%;
+    /* margin-top: -2%; */
+    background-color: white;
     position: fixed;
     width: 100%;
     display: flex;

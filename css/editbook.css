@@ -31,7 +31,7 @@ html , body {
     
 }
 #right{
-    margin-top: 50px;
+    margin-top: 90px;
     width: 60%;
     height: 100vh;
     float: right;
@@ -41,7 +41,7 @@ html , body {
 }
 #left{
     position: fixed;
-    margin-top: 61px;
+    margin-top: 90px;
     width:40%;
     height: 120vh;
     float: left;
@@ -191,4 +191,7 @@ textarea{
     font-family: myfont , serif;
     font-size: 40px;
     color:var(--T800);
+}
+header{
+    margin: 0px;
 }
