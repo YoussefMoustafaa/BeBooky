@@ -1,4 +1,4 @@
-class Book {
+export class Book {
 
     constructor(id, name, author, category, numberOfPages,
         bookCover, description, rating, isBorrowed) {

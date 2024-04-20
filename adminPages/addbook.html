@@ -25,7 +25,7 @@
         </div>
     </header> -->
     <!-- <h1>Add a New Book to the Library!</h1> -->
-    <form action="https://httpbin.org/get" method="get">
+    <form id="addBookForm">
         
             <!-- <legend>Book Details</legend> -->
             <div id = "left">
@@ -49,39 +49,40 @@
                   <div id = "bname">
                   <label for="bookname">Book Name </label>
                   <br>
-                  <input type="text" id="bookname" placeholder="enter the book name"  required>
+                  <input type="text" id="bookName" placeholder="enter the book name"  required>
+                  <br>
                   </div>
                   <div id = "auname">
-                  <label for="author name">Author Name </label>
+                  <label for="author">Author</label>
                   <br>
-                  <input type="text" id="author name" placeholder="enter the author name"  required>
+                  <input type="text" id="author" placeholder="enter the author name"  required>
                   </div>
                   <br>
                   <br>
                   <br>
                   <div id = "bid">
-                  <label for="bookid"> Book ID  </label>
+                  <label for="bookID"> Book ID  </label>
                   <br>
-                  <input type="text" id="bookid" placeholder="enter the book id"  required>
+                  <input type="number" id="bookID" name="bookID" placeholder="enter the book id"  required>
               
                   <br>
                   </div>
                   <div id = "bno">
-                  <label for="no of pages">Number Of Pages </label>
+                  <label for="no_of_pages"> Number Of Pages </label>
                   <br>
-                  <input type="number" name="no of pages" id="no of pages"  placeholder="enter the number of pages" required>
+                  <input type="number" name="no_of_pages" id="no_of_pages"  placeholder="enter the number of pages" required>
                   <br>
                   </div>
                   <div id = "cat">
                       <label for="category"> category  </label>
                     
-                      <input type="text" id="category" placeholder="enter the book's category"  required>
+                      <input type="text" id="category" name="category" placeholder="enter the book's category"  required>
                       
                   </div>
                   <div id = "rat">
-                      <label for="rating">Rating out of 10</label>
+                      <label for="rating">Rating out of 5</label>
                       <br>
-                      <input type="text" name="rating" id="rating"  placeholder="enter the book's rating" required>
+                      <input type="rating" name="rating" id="rating"  placeholder="enter the book's rating" required>
                       <br>
                   </div>
                   <br>
@@ -91,11 +92,12 @@
                   <br>
                   <textarea name="des" id="description" cols="50" rows="10" placeholder="enter the book description"required></textarea>
                   <br>
-                  <button id = "save">Add</button>
+                  <button id = "submit" type="submit">Add Book</button>
                   <!-- <button id = "save" type="submit" value="save changes" > -->
              
           </div>
     </form>
-    
+    <img id="test" src="">
+    <script src="../js/addbook.js" type="module"></script>
 </body>
 </html>
