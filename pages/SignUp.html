@@ -18,38 +18,42 @@
             </nav>
         </div>
     </header>
-    <h1>Sign Up to the Online Library</h1>
-    <form>
-        <div>
-            <label for = "username">Username</label>
-            <br>
-            <input type = "text" required id = "username">
+    <div class = "body-container">
+        <div class = "signup-form">
+            <h1>Sign Up</h1>
+            <form>
+                <label for = "username">Username</label>
+                <div>
+                    <i class="material-icons">person</i>
+                    <input type = "text" required id = "username" placeholder = "Username">
+                </div>
+                <label for = "password">Password</label>
+                <div>
+                    <i class="material-icons">lock</i>
+                    <input type = "password" required minlength = "8" maxlength = "20" id = "password" placeholder = "Password">
+                </div>
+                <label for = "ConfirmPassword">Confirm Password</label>
+                <div>
+                    <i class="material-icons">lock</i>
+                    <input type = "password" required minlength = "8" maxlength = "20" id = "ConfirmPassword" placeholder = "Confirm Password">
+                </div>
+                <label for = "email">Email Address</label>
+                <div>
+                    <i class="material-icons">mail</i>
+                    <input type = "email" required id = "email" placeholder = "Email">
+                </div>
+                <div>
+                    <input id = "isAdmin" type="checkbox" name = "User Type" value = "Admin">
+                    <label for = "isAdmin">Admin</label>
+                </div>
+                <input type="submit" value = "Sign Up">
+            </form>
+            <p>Already have an account? <a href = "#">Login</a></p>
         </div>
-        <div>
-            <label for = "password">Password</label>
-            <br>
-            <input type = "password" required minlength = "8" maxlength = "20" id = "password">
+        <div class = "signup-img">
+            <p>"Access to endless knowledge. Sign up and get started."</p>
+            <img src = "img/Book-Lover-Bro.svg" alt = "A woman enjoying reading">
         </div>
-        <div>
-            <label for = "ConfirmPassword">Confirm Password</label>
-            <br>
-            <input type = "password" required minlength = "8" maxlength = "20" id = "ConfirmPassword">
-        </div>
-        <div>
-            <label for = "email">Email Address</label>
-            <br>
-            <input type = "email" required id = "email">
-        </div>
-        <div>
-            <input id = "isAdmin" type="checkbox" name = "User Type" value = "Admin">
-            <label for = "isAdmin">Admin</label>
-        </div>
-        <input type="submit" value = "Sign Up">
-    </form>
-    <div>
-    Already have an account?
-    <br>
-    Login as <a href = "AdminLogin.html">Admin</a> or <a href = "UserLogin.html">User</a>
     </div>
 </body>
 </html>
