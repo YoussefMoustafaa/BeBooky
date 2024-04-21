@@ -33,3 +33,39 @@ export const usersList = [
     user2,
     user3
 ]
+
+// let username = 'ay'
+// let password = '12'
+
+// let foundUser = usersList.filter(user => {
+//     return (user.username === username && user.password === password)
+// })[0]
+
+// let isUsernameNotUnique = usersList.some(user => {
+//     return (user.username == username)
+// })
+
+// if (isUsernameNotUnique == true) {
+//     console.log('username must be unique');
+// } else {
+
+// }
+
+// if (foundUser)
+//     localStorage.setItem('user', JSON.stringify(foundUser))
+// else {
+    
+// }
+    
+
+// localStorage.setItem('users', JSON.stringify(usersList))
+
+// let input = localStorage.getItem('users')
+
+// input = JSON.parse(input)
+
+
+
+// function getUsers() {
+//     localStorage.getItem()
+// }

@@ -6,7 +6,7 @@ const unSignedNavBar = `
     <li><a href="../adminPages/adminHomePage.html">Admin</a></li>
 </ul>
 <ul id="register-btns">
-    <li><a href="../pages/UserLogin.html" id="login-btn">Log in</a></li>
+    <li><a href="../pages/Login.html" id="login-btn">Log in</a></li>
     <li><a href="../pages/SignUp.html" id="get-started-btn">Get Started</a></li>
 </ul>
 `
