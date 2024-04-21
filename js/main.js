@@ -1,6 +1,7 @@
 import { booksList } from "../modules/books.js"
-import { renderNavBar } from "../modules/navBar.js"
+import { logOut, renderNavBar } from "../modules/navBar.js"
 
+localStorage.setItem('books', JSON.stringify(booksList))
 
 const bookListSection = document.getElementById('book-list')
 
@@ -48,5 +49,15 @@ renderBooks(bookListSection)
 
 let navBar = document.getElementById('nav-bar')
 
+let activeUser = JSON.parse(localStorage.getItem('activeUser')) || null
+
 if (navBar)
-    navBar.innerHTML = renderNavBar(null)
+    navBar.innerHTML = renderNavBar(activeUser)
+
+const logOutBtn = document.getElementById('log-out-btn')
+
+if (logOutBtn) {
+    logOutBtn.addEventListener('click', function() {
+        logOut()
+    })
+}

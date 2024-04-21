@@ -31,9 +31,14 @@ const AdminNavBar = `
     <li><a href="../adminPages/addBook.html">Add Book</a></li>
 </ul>
 <ul id="register-btns">
-    <li><a href="pages/SignUp.html" id="log-out-btn">Log out</a></li>
+    <li><a id="log-out-btn">Log out</a></li>
 </ul>
 `
+
+export function logOut() {
+    localStorage.removeItem('activeUser')
+    window.location.href = '../index.html'
+}
 
 
 export function renderNavBar(user) {

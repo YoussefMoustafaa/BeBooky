@@ -74,6 +74,10 @@ let Books = {
     ],
 };
 
+// let Books = {
+//   data: [JSON.parse(localStorage.getItem('books'))]
+// }
+
 for (let i of Books.data){
 
 

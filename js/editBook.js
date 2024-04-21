@@ -4,23 +4,23 @@ import { booksList } from "../modules/books.js";
 
 let navBar = document.getElementById('nav-bar')
 
-let selectedBook = JSON.parse(sessionStorage.getItem('selectedBook'))
+// let selectedBook = JSON.parse(sessionStorage.getItem('selectedBook'))
 
 
 if (navBar)
     navBar.innerHTML = renderNavBar(usersList[0])
 
-    const book = JSON.parse(sessionStorage.getItem('selectedBook'));
+const book = JSON.parse(sessionStorage.getItem('selectedBook')) || null;
 
-    console.log(document.getElementById('bookname'));
+console.log(document.getElementById('bookname'));
 
-    document.getElementById('bookname').value = book.name;
-    document.getElementById('author').value = book.author;
-    document.getElementById('bookid').value = book.id;
-    document.getElementById('no_of_pages').value = book.numberOfPages;
-    document.getElementById('category').value = book.category.join(', ');
-    document.getElementById('rating').value = book.rating;
-    document.getElementById('description').value = book.description;
+document.getElementById('bookname').value = book.name;
+document.getElementById('author').value = book.author;
+document.getElementById('bookid').value = book.id;
+document.getElementById('no_of_pages').value = book.numberOfPages;
+document.getElementById('category').value = book.category.join(', ');
+document.getElementById('rating').value = book.rating;
+document.getElementById('description').value = book.description;
 
 document.getElementById('editbookform').addEventListener('change', function () {
     book.name = document.getElementById('bookname').value;
@@ -55,7 +55,7 @@ document.getElementById('save').addEventListener('click', function (event) {
     if (index !== -1) {
         booksList[index] = book;
     }
-    window.location.href = 'allbooks.html'; 
+    window.location.href = '../pages/allbooks.html'; 
 });
 
 

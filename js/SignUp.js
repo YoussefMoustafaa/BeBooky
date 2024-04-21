@@ -175,3 +175,20 @@ form.addEventListener('submit', e => {
 //         alert("Ooopppssss... Duplicate found!!!\nYou have already sigjned up");
 //     }
 //     e.preventDefault();
+
+const unSignedNavBar = `
+<a href="../index.html" id="header-title">BeBooky</a>
+<ul id="menu-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../userPages/userHomePage.html">User</a></li>
+    <li><a href="../adminPages/adminHomePage.html">Admin</a></li>
+</ul>
+<ul id="register-btns">
+    <li><a href="../pages/Login.html" id="login-btn">Log in</a></li>
+    <li><a href="../pages/SignUp.html" id="get-started-btn">Get Started</a></li>
+</ul>
+`
+
+let navBar = document.getElementById('nav-bar')
+
+navBar.innerHTML = unSignedNavBar
