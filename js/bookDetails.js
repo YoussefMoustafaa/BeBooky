@@ -23,7 +23,8 @@ function renderBookDetails() {
     <div id = "desc"><div id = "bookLabel"><b>Book Description</b></div>"${book.description}"</div>
     <!-- <img id = "rightImg" src="../images/6888606_copy-removebg-preview.png" alt="right img"> -->
     <button>Borrow</button>
-    <button id="edit-book-btn">Edit Book</button>`    
+    <button id="edit-book-btn">Edit Book</button>
+    <button id="delete-book-btn">Delete Book</button>`    
 
     const bookDetailsSection = document.getElementById('right')
 
@@ -43,14 +44,29 @@ let navBar = document.getElementById('nav-bar')
 navBar.innerHTML = renderNavBar(usersList[1])
 
 const editBookBtn = document.getElementById('edit-book-btn')
+const deleteBookBtn = document.getElementById('delete-book-btn')
 
 if (editBookBtn) {
     editBookBtn.addEventListener('click', function () {
-    
-        console.log(book);
         sessionStorage.setItem('selectedBook', JSON.stringify(book))
     
         window.location.href = '../adminPages/editBook.html'
     })
 
+}
+
+
+function deleteBook() {
+    
+}
+
+
+if (deleteBookBtn) {
+    deleteBookBtn.addEventListener('click', function () {
+        sessionStorage.setItem('selectedBook', JSON.stringify(book))
+
+        deleteBook()
+
+        window.location.href = '../pages/allBooks.html'
+    })
 }
