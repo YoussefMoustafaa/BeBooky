@@ -1,14 +1,13 @@
-import { Book, booksList } from "../modules/books.js";
+import { Book } from "../modules/books.js";
 import { renderNavBar } from "../modules/navBar.js"
-import { usersList } from "../modules/users.js"
+import { usersList } from "../modules/users.js";
 
 let navBar = document.getElementById('nav-bar')
 
 if (navBar)
     navBar.innerHTML = renderNavBar(usersList[0])
 
-//const storedBooksList = JSON.parse(localStorage.getItem('booksList'));
-//const booksList = storedBooksList ? storedBooksList : [];
+const storedBooksArr = JSON.parse(localStorage.getItem('books')) || []
 
 
 document.getElementById("upImg").addEventListener("change", function(event) {
@@ -37,7 +36,7 @@ if(addBookForm) {
         event.preventDefault();
         
         const bookID= document.getElementById("bookID").value;
-        const isBookIDExists = booksList.some(book => book.id == bookID);
+        const isBookIDExists = storedBooksArr .some(book => book.id == bookID);
         console.log(isBookIDExists)
         console.log("the book ID I just entered", bookID)
         if (isBookIDExists) {
@@ -51,8 +50,6 @@ const no_of_pages = document.getElementById("no_of_pages").value;
 const rating = document.getElementById("rating").value;
 const description = document.getElementById("description").value;
 const bookCover = sessionStorage.getItem("uploadedImageData"); 
-document.getElementById('test').setAttribute("src", bookCover);
-console.log("Book Cover:", bookCover);
 
 
 
@@ -64,18 +61,18 @@ console.log("Book Cover:", bookCover);
     author,
     category,
     no_of_pages,
-    description,
     bookCover,
+    description,
     rating,
     false 
  );
 
- booksList.push(newBook);
-
+ storedBooksArr.push(newBook);
+localStorage.setItem('books', JSON.stringify(storedBooksArr))
  console.log("bookID:", bookID);
- console.log("booksList:", booksList);
+ console.log("storedBooksArr  :", storedBooksArr);
  // Check if the book was added successfully
-if (booksList.some(book => book.id === newBook.id)) {
+if (storedBooksArr.some(book => book.id === newBook.id)) {
     // Inform the user that the book was added successfully
     alert("Book added successfully!");
 } else {

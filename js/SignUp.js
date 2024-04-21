@@ -52,6 +52,7 @@ let AddUser = () => {
         count++,
         username,
         password.value,
+        [],
         isChecked()
     );
     let storedUsers = JSON.parse(localStorage.getItem('users'))
@@ -94,56 +95,43 @@ let PassCheck = () => {
     }
 }
 
-let flag = true
-let usernameValidMsg = document.getElementById('username-val-msg')
-let usernameCheckIcon = document.getElementById('username-check-icon')
+// let flag = true
+// let usernameValidMsg = document.getElementById('username-val-msg')
+// let usernameCheckIcon = document.getElementById('username-check-icon')
 
-let validUser = document.querySelector(".Username");
+// let validUser = document.querySelector(".Username");
 
-document.getElementById('username').addEventListener('keyup', function(value) {
-    let isUsernameExists = usersList.some(user => {
-        return (user.username == username)
-    })
-    let add = ``
-    if (isUsernameExists == true) {
-        usernameValidMsg.textContent = "username already exists, try another";
-        usernameValidMsg.style.color = "red";
-        usernameCheckIcon.style.color = "red";
-        usernameCheckIcon.textContent = "error";
+// document.getElementById('username').addEventListener('keyup', function(value) {
+//     let isUsernameExists = usersList.some(user => {
+//         return (user.username == username)
+//     })
+//     let add = ``
+//     if (isUsernameExists == true) {
+//         usernameValidMsg.textContent = "username already exists, try another";
+//         usernameValidMsg.style.color = "red";
+//         usernameCheckIcon.style.color = "red";
+//         usernameCheckIcon.textContent = "error";
     
-        add = `
-            <p  style = "color: red; margin-bottom: 5px; display: flex; align-items: center;">
-            <i class="material-icons" style = "color: red;">error</i>
-             username already exists, try another</p>`;
+//         add = `
+//             <p  style = "color: red; margin-bottom: 5px; display: flex; align-items: center;">
+//             <i class="material-icons" style = "color: red;">error</i>
+//              username already exists, try another</p>`;
         
-        // Add 'add' variable after form
-    } else {
-        usernameValidMsg.innerHTML = "Username Valid";
-        usernameValidMsg.style.color = "green";
-        usernameCheckIcon.style.color = "green";
-        usernameCheckIcon.innerHTML = "check_circle";
-        add = `
-            <p  style = "color: green; margin-bottom: 5px; display: flex; align-items: center;">
-            <i class="material-icons" style = "color: green;">check_circle</i>
-             Username valid</p>`;
-        
-        // Add 'add' variable after form
-    }
-
-})
-
-
-    // validUser.innerHTML = ``;        
-
-// if(password.value != ''){
-//     if(password.value.length < 8){
-//         document.querySelector(".min").innerHTML = `Password Must contain at least 8 charcaters`;
+//         // Add 'add' variable after form
 //     } else {
-//         document.querySelector(".min").innerHTML = ``;
+//         usernameValidMsg.innerHTML = "Username Valid";
+//         usernameValidMsg.style.color = "green";
+//         usernameCheckIcon.style.color = "green";
+//         usernameCheckIcon.innerHTML = "check_circle";
+//         add = `
+//             <p  style = "color: green; margin-bottom: 5px; display: flex; align-items: center;">
+//             <i class="material-icons" style = "color: green;">check_circle</i>
+//              Username valid</p>`;
+        
+//         // Add 'add' variable after form
 //     }
-// } else {
-//     document.querySelector(".min").innerHTML = ``;
-// }
+
+// })
 
 let form = document.getElementById('sign-up-form')
 
@@ -155,26 +143,6 @@ form.addEventListener('submit', e => {
     window.location.href = 'Login.html';
 })
 
-
-    // let formData = JSON.parse(localStorage.getItem('formData')) || [];
-
-//     let exist = formData.length && 
-//         JSON.parse(localStorage.getItem('formData')).some(data => 
-//             data.fname.toLowerCase() == fname.toLowerCase() && 
-//             data.lname.toLowerCase() == lname.toLowerCase()
-//         );
-
-//     if(!exist){
-//         formData.push({ fname, lname, email, pwd });
-//         localStorage.setItem('formData', JSON.stringify(formData));
-//         document.querySelector('form').reset();
-//         document.getElementById('fname').focus();
-//         alert("Account Created.\n\nPlease Sign In using the link below.");
-//     }
-//     else{
-//         alert("Ooopppssss... Duplicate found!!!\nYou have already sigjned up");
-//     }
-//     e.preventDefault();
 
 const unSignedNavBar = `
 <a href="../index.html" id="header-title">BeBooky</a>

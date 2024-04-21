@@ -1,31 +1,36 @@
-users = [user1, user2]
-
 let activeUser = JSON.parse(localStorage.getItem('activeUser'))
 
-activeUser = {
-    userId,
-    username,
-    password,
-    borrowedBooks,
-    isAdmin
+var selectedBook = JSON.parse(sessionStorage.getItem('selectedBook'))
+
+if(selectedBook.isBorrowed==true){
+    alert("Book is already borrowed");
 }
-
-
-button.addEventListner('click', function () {
-    activeUser.borrowedBooks.push(book)
-
+else{
+    selectedBook.isBorrowed = true
+    console.log(activeUser);
+    console.log(selectedBook);
+    activeUser.borrowedBooks.push(selectedBook)
     let users = JSON.parse(localStorage.getItem('users'))
-
+    
     let i = users.indexOf((user) => {
-        return userId == activeUser.Id
+        return user.userID == activeUser.userID
     })
 
-    users[i].borrowedBooks.push(book)
+    users[i].borrowedBooks.push(selectedBook)
 
     localStorage.setItem('user', JSON.stringify(users))
 
-
     localStorage.setItem('activeUser', JSON.stringify(activeUser))
 
-    window.location.href = '/borrowedBooks.html'
-})
+    let AllBooks = JSON.parse(localStorage.getItem("books"))
+
+    let j = AllBooks.indexOf((book) => {
+        return book.id == selectedBook.id;
+    })
+
+    AllBooks[j].isBorrowed = true
+
+    localStorage.setItem('books', JSON.stringify(AllBooks))
+
+    alert("Book borrowed successfully");
+}

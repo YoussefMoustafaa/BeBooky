@@ -19,7 +19,7 @@ const UserNavBar = `
     <li><a href="../userPages/userBorrowedBooks.html">Borrowed Books</a></li>
 </ul>
 <ul id="register-btns">
-    <li><a href="pages/SignUp.html" id="log-out-btn">Log out</a></li>
+    <li><a href="../pages/SignUp.html" id="log-out-btn">Log out</a></li>
 </ul>
 `
 
@@ -31,7 +31,7 @@ const AdminNavBar = `
     <li><a href="../adminPages/addBook.html">Add Book</a></li>
 </ul>
 <ul id="register-btns">
-    <li><a id="log-out-btn">Log out</a></li>
+    <li><a href="../pages/SignUp.html" id="log-out-btn">Log out</a></li>
 </ul>
 `
 
