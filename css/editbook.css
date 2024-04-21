@@ -42,8 +42,9 @@ html , body {
 }
 #left{
     position: fixed;
-    margin-top: 90px;
+    /* margin-top: 90px; */
     width:40%;
+    top: 91px;
     height: 100%;
     float: left;
     background-color: var(--S100);
@@ -83,6 +84,7 @@ h2{
     height: 50px;
     cursor: pointer;
     border-radius: 15px;
+    margin-bottom: 40px;
 }
 label{
     font-size: 140%;

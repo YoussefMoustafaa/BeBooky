@@ -29,7 +29,7 @@
         </div>
         <div class = "login-form">
             <h1>Login</h1>
-            <form>
+            <form onsubmit="submitForm(event)">
                 <label for = "username">Username or email address</label>
                 <div>
                     <i class="material-icons">person</i>
@@ -38,12 +38,15 @@
                 <label for = "password">Password</label>
                 <div>
                     <i class="material-icons">lock</i>
-                    <input type = "password" required minlength = "8" maxlength = "20" id = "password" placeholder = "Password">
+                    <input type = "password" required minlength = "8" maxlength = "20" id = "password" placeholder = "Password" onkeyup="PassMin()">
+                    <i class="material-icons" id = "visibile" onclick = "ToggleVisibility()">visibility</i>
                 </div>
-                <input type="submit" value = "Log In">
+                <input type="submit" value = "Log In" onclick = "findUser()">
             </form>
             <P>Don't have an account? <a href = "#">Sign up</a></P>
         </div>
     </div>
+    
+    <script  src = "../js/Login.js"></script>
 </body>
 </html>
