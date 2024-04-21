@@ -226,6 +226,9 @@
     font-style: italic;
 }
 
-.display {
-    display: hidden;
+.username-msg {
+    color: green;
+    margin-bottom: 5px; 
+    display: flex; 
+    align-items: center;
 }

@@ -9,16 +9,18 @@
 </head>
 <body>
     <header>
-        <div  class="header-container">
-            <a href="../index.html" id="header-title">Online Library</a>
-            <nav>
-                <input type="text" placeholder="Search Books..." id="search-bar">
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="pages/SignUp.html">Sign Up</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav id="nav-bar">
+            <!-- <a href="./index.html" id="header-title">BeBooky</a>
+            <ul id="menu-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="userPages/userHomePage.html">User</a></li>
+                <li><a href="adminPages/adminHomePage.html">Admin</a></li>
+            </ul>
+            <ul id="register-btns">
+                <li><a href="pages/UserLogin.html" id="login-btn">Log in</a></li>
+                <li><a href="pages/SignUp.html" id="get-started-btn">Get Started</a></li>
+            </ul> -->
+        </nav>
     </header>
     <div class = "body-container">
         <div class = "signup-form">
@@ -27,11 +29,11 @@
                 <label for = "username">Username</label>
                 <div class = "Username">
                     <i class = "material-icons">person</i>
-                    <input type = "text" required id = "username" placeholder = "Username" onkeyup = "checkUserIsValid(value)">
+                    <input type = "text" required id = "username" placeholder = "Username">
                 </div>
-                <p  id="username-val-msg" class="display" style = "color: green; margin-bottom: 5px; display: flex; align-items: center;">
-                    <i class="material-icons" style = "color: green;">check_circle</i>
-                     Username valid</p>
+                <p  id="username-val-msg" class="username-msg">
+                    <i class="material-icons" style = "color: green;" id="username-check-icon"></i>
+                    </p>
                 <p  style = "margin-bottom: 5px; display: flex; align-items: center;"></p>
                 <label for = "password">Password</label>
                 <div>

@@ -1,12 +1,13 @@
 import { renderNavBar } from "../modules/navBar.js"
 import { usersList } from "../modules/users.js"
 
+let book = JSON.parse(sessionStorage.getItem('selectedBook'))
+
 function renderBookDetails() {
-    let book = JSON.parse(sessionStorage.getItem('selectedBook'))
 
-    book.category = book.category.join(', ')
 
-    book.description = book.description.replaceAll('\\n', '<br>')
+    if (book)
+        book.description = book.description.replaceAll('\\n', '<br>')
 
     let bookHtml = `<div id = "bookName">${book.name}</div>
     <div id = "rat"><b>Book Rating :&nbsp;</b> ${book.rating} </div>
@@ -21,7 +22,8 @@ function renderBookDetails() {
 
     <div id = "desc"><div id = "bookLabel"><b>Book Description</b></div>"${book.description}"</div>
     <!-- <img id = "rightImg" src="../images/6888606_copy-removebg-preview.png" alt="right img"> -->
-    <button>Borrow</button>`    
+    <button>Borrow</button>
+    <button id="edit-book-btn">Edit Book</button>`    
 
     const bookDetailsSection = document.getElementById('right')
 
@@ -39,3 +41,16 @@ renderBookDetails()
 let navBar = document.getElementById('nav-bar')
 
 navBar.innerHTML = renderNavBar(usersList[1])
+
+const editBookBtn = document.getElementById('edit-book-btn')
+
+if (editBookBtn) {
+    editBookBtn.addEventListener('click', function () {
+    
+        console.log(book);
+        sessionStorage.setItem('selectedBook', JSON.stringify(book))
+    
+        window.location.href = '../adminPages/editBook.html'
+    })
+
+}

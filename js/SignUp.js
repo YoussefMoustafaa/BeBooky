@@ -95,35 +95,43 @@ let PassCheck = () => {
 }
 
 let flag = true
-document.getElementById('username-val-msg')
+let usernameValidMsg = document.getElementById('username-val-msg')
+let usernameCheckIcon = document.getElementById('username-check-icon')
 
 let validUser = document.querySelector(".Username");
-let checkUserIsValid = (value) =>{
+
+document.getElementById('username').addEventListener('keyup', function(value) {
     let isUsernameExists = usersList.some(user => {
         return (user.username == username)
     })
     let add = ``
     if (isUsernameExists == true) {
-        if(flag){
+        usernameValidMsg.textContent = "username already exists, try another";
+        usernameValidMsg.style.color = "red";
+        usernameCheckIcon.style.color = "red";
+        usernameCheckIcon.textContent = "error";
+    
         add = `
             <p  style = "color: red; margin-bottom: 5px; display: flex; align-items: center;">
             <i class="material-icons" style = "color: red;">error</i>
              username already exists, try another</p>`;
         
         // Add 'add' variable after form
-        flag = false
-        }
     } else {
+        usernameValidMsg.innerHTML = "Username Valid";
+        usernameValidMsg.style.color = "green";
+        usernameCheckIcon.style.color = "green";
+        usernameCheckIcon.innerHTML = "check_circle";
         add = `
             <p  style = "color: green; margin-bottom: 5px; display: flex; align-items: center;">
             <i class="material-icons" style = "color: green;">check_circle</i>
              Username valid</p>`;
         
         // Add 'add' variable after form
-        flag = false
     }
-    validUser.insertAdjacentHTML('afterend', add);    
-    }
+
+})
+
 
     // validUser.innerHTML = ``;        
 
