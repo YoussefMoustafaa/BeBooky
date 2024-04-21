@@ -70,7 +70,55 @@ let Books = {
             rate: "3.6",
             image: "../images/The Wedding Date.jpg",
         },
-
+        {
+          BookName: "A Tale of Two Cities",
+          Author:"Charles Dickens",
+          category: "History",
+          rate: "3.9",
+          image: "../images/A Tale of Two Cities.jpg",
+        },
+        {
+          BookName: "Learning How to Learn",
+          Author:"Barbara Oakley",
+          category: "Science",
+          rate: "4.4",
+          image: "../images/Learning How to Learn.jpg",
+        },
+        {
+          BookName: "Frankenstein",
+          Author:"Mary Shelley",
+          category: "Fiction",
+          rate: "3.9",
+          image: "../images/Frankenstein.jpg",
+        },
+        {
+          BookName: "Girl With a Pearl Earring",
+          Author:"Tracy Chevalier",
+          category: "Art",
+          rate: "3.9",
+          image: "../images/Girl With a Pearl Earring.jpg",
+        },
+        {
+          BookName: "Nineteen Eighty-Four [1984]",
+          Author:"George Orwell",
+          category: "Fiction",
+          rate: "4.3",
+          image: "../images/Nineteen Eighty-Four [1984].jpg",
+        },
+        {
+          BookName: "V for Vendetta",
+          Author:"Alan Moore",
+          category: "Comics",
+          rate: "4.3",
+          image: "../images/V for Vendetta.jpg",
+        },
+        {
+          BookName: "Code Dependent",
+          Author:"Madhumita Murgia",
+          category: "Science",
+          rate: "4",
+          image: "../images/Code Dependent.jpg",
+        },
     ],
 };
 

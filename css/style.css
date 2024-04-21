@@ -77,15 +77,16 @@ nav ul {
 }
 
 nav {
-    margin-top: -2%;
+    /* margin-top: -2%; */
     background-color: white;
     position: sticky;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2em 3em;
+    padding: 1em 3em;
 }
+
 
 
 #menu-links {
