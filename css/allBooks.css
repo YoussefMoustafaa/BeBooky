@@ -1,0 +1,152 @@
+:root{
+    --T50:  #F0FDFA;
+    --T100: #CCFBF1;
+    --T200: #99F6E4;
+    --T300: #5EEAD4;
+    --T400: #2DD4BF;
+    --T500: #14B8A6;
+    --T600: #0D9488;
+    --T700: #0F766E;
+    --T800: #115E59;
+    --T900: #134E4A;
+    --T950: #042F2E;
+    --S50:  #FAFAF9;
+    --S100: #F5F5F4;
+    --S200: #E7E5E4;
+    --S300: #D6D3D1;
+    --S400: #A8A29E;
+    --S500: #78716C;
+    --S600: #57534E;
+    --S700: #44403C;
+    --S800: #292524;
+    --S900: #1C1917;
+    --S950: #0C0A09;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background-color: #F5F5F4;
+}
+
+.wrapper{
+    width: 35%;
+    margin: 0 34em;
+}
+
+#search-container{
+    margin: 1em 1em;
+}
+
+#search-container input{
+    background-color: transparent;
+    width: 77%;
+    border-bottom: 2px solid #0F766E;
+    padding: 1em 2em;
+    margin-top: 0.5em;
+    font-weight: 545;
+    font-size: large;
+}
+
+#search-container input:focus{
+    border-bottom-color: #042F2E;
+}
+
+#search-container button{
+    padding: 1em 2em;
+    margin-left: 2em;
+    background-color: #0F766E;
+    color: #F5F5F4;
+    border-radius: 30px;
+    margin-top: 0.5em;
+    cursor: pointer;
+}
+
+.button-value{
+    border: 2px solid #0F766E;
+    padding: 1em 2.2em;
+    border-radius: 30px;
+    background-color: #F5F5F4;
+    color: #0F766E;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 7px ;
+}
+
+.active{
+    background-color: #0F766E;
+    color: #F5F5F4;
+}
+
+#Books{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-column-gap: 2em;
+    padding: 5em 18em;
+}
+
+.card{
+    background-color: #ffffff;
+    border: 2px solid #0D9488;
+    width: 15.5em;
+    height: 22em;
+    margin-top: 2em;
+    margin-left:  -4em;
+    margin-right: 7.2em;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 1em 1em 1.5em rgba(1, 2, 68, 0.1);
+}
+
+.image-container{
+    text-align: center;
+}
+
+img{
+    width: 10em;
+    border: 1.2px solid #292524;
+    border-radius: 8px;
+    height: 13.5em;
+}
+
+.container{
+    padding-top: 1em;
+} 
+
+.container h3{
+    color: black;
+}
+
+.container h6{
+    color: #57534E;
+    padding-top: 0.5em;
+}
+
+.container h2{
+    color: #0F766E;
+    text-align: end;
+    font-weight: 550;
+    font-size: larger;
+}
+
+.star-icon {
+    color: orange;
+}
+
+.hide{
+    display: none;
+}
+
+/* Filter Layout */
+
+.filter-container {
+    display: flex;
+    justify-content: start;
+}
