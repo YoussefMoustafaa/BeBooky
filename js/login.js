@@ -1,7 +1,5 @@
 // import {User, usersList} from "../JS/users.js";
 
-let usersList = JSON.parse(localStorage.getItem('users')) || []
-
 let password = document.querySelector("#password");
 
 let show = "visibility";
@@ -60,13 +58,14 @@ if(localStorage.getItem('username') && localStorage.getItem("password")){
     document.getElementById("password").value = localStorage.getItem("password");
 }
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    let username = document.getElementById("username").value;
-    let password = document.getElementById("password").value;
-    findUser(username, password)
+// form.addEventListener('submit', (e) => {
+//     e.preventDefault();
+//     let username = document.getElementById("username").value;
+//     let password = document.getElementById("password").value;
+//     localStorage.setItem('username',username);
+//     localStorage.setItem('password',password);
 
-});
+// });
 
 // function submitForm(event) {
 
