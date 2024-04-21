@@ -31,47 +31,60 @@ html , body {
     src: url(../fonts/Lato/Lato-Black.ttf);
     
 }
-#right{
-    margin-top: 90px;
-    width: 60%;
-    height: 100vh;
-    float: right;
-    /* background-color: var(--T2  00); */
-    background-color: white;
-    display: inline-block;
+
+.body-container-edit form {
+    display: flex;
+    flex-direction: row;
 }
+
+.body-container-edit form > div {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#right{
+    background-color: var(--S50);
+    align-items: center;
+    font-size: 15px;
+    overflow: auto;
+    display: inline-block;
+    width: 100%;
+    padding-right: 50px;
+}
+
 #left{
-    position: fixed;
-    /* margin-top: 90px; */
-    width:40%;
-    margin-top: 4.3%;
-    height: 100%;
+    width:60%;
     float: left;
     background-color: var(--S100);
+    top: 0;
+    left: 0;
+    bottom: 0;
 }
+
 h2{
     margin-left: 20px;
     font-family: myfont, serif;
     font-weight: bold;
     font-style: normal;
     color: black;
-    padding:50px;
+    padding: 40px;
+    padding-bottom: 20px;
     font-size: 200%;
 }
 #leftTitle{
-    margin-left:  20px;
-    padding:0px 0px 10px 30px;
+    margin-left: 20px;
+    padding: 0px 0px 10px 30px;
     color: var(--T800);
-    font-family: myfont , serif;
+    font-family: myfont, serif;
     font-weight: bold;
     font-style: normal;
     font-size: 200%;
 }
 #leftImg{
-    margin-top: 20px;
-    padding-left: 170px;
-    width: 90%;
-    height: 50%;
+    margin: 0 calc(100% / 5);
+    max-width: 240px;
 }
 #save{
     font-size: 20px;
@@ -87,7 +100,7 @@ h2{
     margin-bottom: 40px;
 }
 label{
-    font-size: 140%;
+    font-size: 15px;
     color: black;
     font-family: myfont , serif;
     margin: 0px 0px 20px 75px ;
@@ -196,22 +209,20 @@ textarea{
 }
     
 #info{
-    margin-top: 50px;
-    padding :30px 0px 0 80px;
-    margin-right: 50px;
-    font-family: myfont , serif;
-    font-size: 30px;
-    color:var(--T800);
+    margin-top: 40px;
+    padding: 0 50px 10px;
+    font-family: myfont, serif;
+    font-size: 20px;
+    color: var(--T800);
 }
 header{
     margin: 0px;
 }
 #imgFrame{
-    width: 40%;
-    height: 450px;
+    width: 150px;
     padding: 2%;
     box-shadow: 0px 0px 10px var(--T900,0.1);
-    margin: 40px 40px 30px 70px;
+    margin: 15px 40px 30px 70px;
 }    
 #img{
     width: 99%;
@@ -224,7 +235,7 @@ header{
 #rightImg label{
     color: white;
     font-family: myfont;
-    font-size: 100%; 
+    font-size: 15px; 
     background-size: 500px;
     background-color: var(--T800);
     border-radius: 10px;
