@@ -107,6 +107,7 @@ h2{
     height: 50px;
     cursor: pointer;
     border-radius: 15px;
+    margin-bottom: 40px;
 }
 label{
     font-size: 140%;
