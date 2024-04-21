@@ -213,6 +213,24 @@ document.getElementById("search").addEventListener("click", () => {
     });
   });
 
+  document.getElementById("searchauthor").addEventListener("click", () => {
+
+    let authorInput = document.getElementById("Author-input").value.toUpperCase();
+    let elements = document.querySelectorAll(".Autor-name") ;
+    let cards = document.querySelectorAll(".card");
+
+    elements.forEach((element, index) => {
+
+      if (element.innerText.includes(authorInput)) {
+        cards[index].classList.remove("hide");
+      }
+       else {
+        cards[index].classList.add("hide");
+      }
+      
+    });
+  });  
+
 window.onload = () => {
     filterBook("All Books");
 };
