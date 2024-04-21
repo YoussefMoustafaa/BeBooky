@@ -1,4 +1,12 @@
-// import { getUsers, saveUsers } from "../modules/users.js";
+class User {
+    constructor(userID, username, password, borrowedBooks, isAdmin) {
+        this.userID = userID;
+        this.username = username;
+        this.password = password;
+        this.borrowedBooks = borrowedBooks;
+        this.isAdmin = isAdmin;
+    }
+}
 
 let usersList = JSON.parse(localStorage.getItem('users')) || []
 
@@ -36,18 +44,6 @@ let isChecked = () =>{
     return(Admin.checked)? true : false;
 }
 
-
-class User {
-    constructor(userID, username, password, isAdmin) {
-        this.userID = userID;
-        this.username = username;
-        this.password = password;
-        this.isAdmin = isAdmin;
-    }
-}
-
-
-
 let AddUser = () => {
     let username = document.querySelector("#username").value,
     email = document.getElementById('email').value,
@@ -66,52 +62,70 @@ let AddUser = () => {
     localStorage.setItem('users', JSON.stringify(storedUsers))
 }
 
-
-
+let min = document.querySelector(".min");
 let PassMin = () => {
     if(password.value != ''){
         if(password.value.length < 8){
-            document.querySelector(".min").innerHTML = `Password Must contain at least 8 charcaters`;
+            min.innerHTML = `Password Must contain at least 8 charcaters`;
         } else {
-            document.querySelector(".min").innerHTML = ``;
+            min.innerHTML = ``;
         }
     } else {
-        document.querySelector(".min").innerHTML = ``;
+        min.innerHTML = ``;
     }
 }
 
+let message = document.querySelector(".message");
 let PassCheck = () => {
     if(password.value != '' && confirmPassword.value != ''){
         if(password.value.length >= 8 && confirmPassword.value.length >= 8){
             if(confirmPassword.value === password.value){
-                document.querySelector(".message").innerHTML = `<i class="material-icons" style = "color: green;">check_circle</i> Password Matches`;
-                document.querySelector(".message").style.color = "green";
+                message.innerHTML = `<i class="material-icons" style = "color: green;">check_circle</i> Password Matches`;
+                message.style.color = "green";
             } else {
-                document.querySelector(".message").innerHTML = `<i class="material-icons" style = "color: red;">error</i> Password not Match`;
-                document.querySelector(".message").style.color = "red";
+                message.innerHTML = `<i class="material-icons" style = "color: red;">error</i> Password not Match`;
+                message.style.color = "red";
             }
         } else {
-            document.querySelector(".message").innerHTML = `Password Must contain at least 8 charcaters`;
+            message.innerHTML = `Password Must contain at least 8 charcaters`;
         }
     } else {
-        document.querySelector(".message").innerHTML = ``;
+        message.innerHTML = ``;
     }
 }
 
+let flag = true
+document.getElementById('username-val-msg')
 
+let validUser = document.querySelector(".Username");
 let checkUserIsValid = (value) =>{
     let isUsernameExists = usersList.some(user => {
         return (user.username == username)
     })
-
+    let add = ``
     if (isUsernameExists == true) {
-        document.querySelector(".user").innerHTML = `<i class="material-icons" style = "color: red;">error</i> username already exists, try another`;
-        document.querySelector(".user").style.color = "red";
+        if(flag){
+        add = `
+            <p  style = "color: red; margin-bottom: 5px; display: flex; align-items: center;">
+            <i class="material-icons" style = "color: red;">error</i>
+             username already exists, try another</p>`;
+        
+        // Add 'add' variable after form
+        flag = false
+        }
     } else {
-        document.querySelector(".user").innerHTML = `<i class="material-icons" style = "color: red;">error</i> username already exists, try another`;        
-        document.querySelector(".user").style.color = "green";
+        add = `
+            <p  style = "color: green; margin-bottom: 5px; display: flex; align-items: center;">
+            <i class="material-icons" style = "color: green;">check_circle</i>
+             Username valid</p>`;
+        
+        // Add 'add' variable after form
+        flag = false
     }
-}
+    validUser.insertAdjacentHTML('afterend', add);    
+    }
+
+    // validUser.innerHTML = ``;        
 
 // if(password.value != ''){
 //     if(password.value.length < 8){

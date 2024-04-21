@@ -225,3 +225,7 @@
     color: var(--T200);
     font-style: italic;
 }
+
+.display {
+    display: hidden;
+}

@@ -29,7 +29,10 @@
                     <i class = "material-icons">person</i>
                     <input type = "text" required id = "username" placeholder = "Username" onkeyup = "checkUserIsValid(value)">
                 </div>
-                <p  style = "margin-bottom: 5px; display: flex; align-items: center;"></p>`;
+                <p  id="username-val-msg" class="display" style = "color: green; margin-bottom: 5px; display: flex; align-items: center;">
+                    <i class="material-icons" style = "color: green;">check_circle</i>
+                     Username valid</p>
+                <p  style = "margin-bottom: 5px; display: flex; align-items: center;"></p>
                 <label for = "password">Password</label>
                 <div>
                     <i class="material-icons">lock</i>
@@ -55,7 +58,7 @@
                 </div>
                 <input type="submit" value = "Sign Up">
             </form>
-            <p>Already have an account? <a href = "#">Login</a></p>
+            <p>Already have an account? <a href = "../pages/Login.html">Login</a></p>
         </div>
         <div class = "signup-img">
             <p>"Access to endless knowledge. Sign up and get started."</p>

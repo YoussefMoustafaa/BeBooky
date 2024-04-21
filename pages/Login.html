@@ -29,7 +29,7 @@
         </div>
         <div class = "login-form">
             <h1>Login</h1>
-            <form onsubmit="submitForm(event)">
+            <form id="log-in-form">
                 <label for = "username">Username or email address</label>
                 <div>
                     <i class="material-icons">person</i>
@@ -41,9 +41,10 @@
                     <input type = "password" required minlength = "8" maxlength = "20" id = "password" placeholder = "Password" onkeyup="PassMin()">
                     <i class="material-icons" id = "visibile" onclick = "ToggleVisibility()">visibility</i>
                 </div>
-                <input type="submit" value = "Log In" onclick = "findUser()">
+                <p class = "min" style="margin-bottom: 5px; display: flex; align-items: center;"></p>
+                <input type="submit" value = "Log In">
             </form>
-            <P>Don't have an account? <a href = "#">Sign up</a></P>
+            <P>Don't have an account? <a href = "../pages/SignUp.html">Sign up</a></P>
         </div>
     </div>
     
