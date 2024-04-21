@@ -44,7 +44,7 @@ html , body {
     position: fixed;
     /* margin-top: 90px; */
     width:40%;
-    top: 91px;
+    margin-top: 4.3%;
     height: 100%;
     float: left;
     background-color: var(--S100);
@@ -58,16 +58,16 @@ h2{
     padding:50px;
     font-size: 200%;
 }
-#rightTitle{
+#leftTitle{
     margin-left:  20px;
-    padding:30px 0px 10px 30px;
+    padding:0px 0px 10px 30px;
     color: var(--T800);
     font-family: myfont , serif;
     font-weight: bold;
     font-style: normal;
     font-size: 200%;
 }
-#rightImg{
+#leftImg{
     margin-top: 20px;
     padding-left: 170px;
     width: 90%;
@@ -156,6 +156,7 @@ textarea{
     width:50%;
     float: left;
     margin-bottom: 25px;
+    margin-top: 50px;
     /* margin-right: 0px;
     padding-right: 0px; */
 }
@@ -163,11 +164,13 @@ textarea{
     margin-bottom: 25px;
     width: 50%;
     float:right;
+    margin-top: 50px;
 }
 #bid{
     width:50%;
     float: left;
     margin-bottom: 25px;
+    margin-top: 50px;
     /* margin-right: 0px;
     padding-right: 0px; */
 }
@@ -175,11 +178,13 @@ textarea{
     margin-bottom: 25px;
     width: 50%;
     float:right;
+    margin-top: 50px;
 }
 #cat{
     width:50%;
     float: left;
     margin-bottom: 25px;
+    margin-top: 50px;
     /* margin-right: 0px;
     padding-right: 0px; */
 }
@@ -187,6 +192,7 @@ textarea{
     margin-bottom: 25px;
     width: 50%;
     float:right;
+    margin-top: 50px;
 }
     
 #info{
@@ -199,4 +205,29 @@ textarea{
 }
 header{
     margin: 0px;
+}
+#imgFrame{
+    width: 40%;
+    height: 450px;
+    padding: 2%;
+    box-shadow: 0px 0px 10px var(--T900,0.1);
+    margin: 40px 40px 30px 70px;
+}    
+#img{
+    width: 99%;
+    height: 99%;
+    /* margin-right: 6px; */
+}
+#rightImg input{
+    display: none;
+}
+#rightImg label{
+    color: white;
+    font-family: myfont;
+    font-size: 100%; 
+    background-size: 500px;
+    background-color: var(--T800);
+    border-radius: 10px;
+    padding: 15px ;
+    margin-bottom: 250px;
 }
