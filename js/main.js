@@ -17,13 +17,14 @@ export function viewBookDetails(event) {
 }
 
 
-
-document.addEventListener('click', function (event) {
-    if (event.target.id) {
-        // window.location.href = `./book.html?id=${event.target.id}`
-        viewBookDetails(event)
-    }
-})
+if (bookListSection) {
+    bookListSection.addEventListener('click', function (event) {
+        if (event.target.id) {
+            // window.location.href = `./book.html?id=${event.target.id}`
+            viewBookDetails(event)
+        }
+    })
+}
 
 
 
@@ -48,12 +49,54 @@ export function renderBooks(bookListConatiner) {
 
 renderBooks(bookListSection)
 
+const unSignedNavBar = `
+<a href="../pages/index.html" id="header-title">BeBooky</a>
+<ul id="menu-links">
+    <li><a href="../pages/index.html">Home</a></li>
+</ul>
+<ul id="register-btns">
+    <li><a href="../pages/Login.html" id="login-btn">Log in</a></li>
+    <li><a href="../pages/SignUp.html" id="get-started-btn">Get Started</a></li>
+</ul>
+`
+
+const UserNavBar = `
+<a href="../userPages/userHomePage.html" id="header-title">BeBooky</a>
+<ul id="menu-links">
+    <li><a href="../pages/index.html">Home</a></li>
+    <li><a href="../pages/allBooks.html">All Books</a></li>
+    <li><a href="../userPages/userBorrowedBooks.html">Borrowed Books</a></li>
+</ul>
+<ul id="register-btns">
+    <li><a href="../pages/SignUp.html" id="log-out-btn">Log out</a></li>
+</ul>
+`
+
+const AdminNavBar = `
+<a href="../userPages/userHomePage.html" id="header-title">BeBooky</a>
+<ul id="menu-links">
+    <li><a href="../pages/index.html">Home</a></li>
+    <li><a href="../pages/allBooks.html">All Books</a></li>
+    <li><a href="../adminPages/addBook.html">Add Book</a></li>
+</ul>
+<ul id="register-btns">
+    <li><a href="../pages/SignUp.html" id="log-out-btn">Log out</a></li>
+</ul>
+`
+
 let navBar = document.getElementById('nav-bar')
 
-let activeUser = JSON.parse(localStorage.getItem('activeUser')) || null
+let activeUser = document.getElementById('activeUser')
 
-if (navBar)
-    navBar.innerHTML = renderNavBar(activeUser)
+if (navBar) {
+    if (!activeUser) {
+        navBar.innerHTML= unSignedNavBar
+    } else if (activeUser.isAdmin) {
+        navBar.innerHTML= AdminNavBar
+    } else {
+        navBar.innerHTML= UserNavBar
+    }
+}
 
 const logOutBtn = document.getElementById('log-out-btn')
 
