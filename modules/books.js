@@ -76,7 +76,7 @@ let book3 = new Book(
     true
 )
 
-export const booksList = [
+export let booksList = [
     book1,
     book2,
     book3

@@ -22,7 +22,7 @@ function renderBookDetails() {
 
     <div id = "desc"><div id = "bookLabel"><b>Book Description</b></div>"${book.description}"</div>
     <!-- <img id = "rightImg" src="../images/6888606_copy-removebg-preview.png" alt="right img"> -->
-    <button>Borrow</button>
+    <button id ="Borrow_button">Borrow</button>
     <button id="edit-book-btn">Edit Book</button>
     <button id="delete-book-btn">Delete Book</button>`    
 
@@ -57,7 +57,12 @@ if (editBookBtn) {
 
 
 function deleteBook() {
-    
+    var selectedBook = JSON.parse(sessionStorage.getItem('selectedBook'));
+    var books = JSON.parse(localStorage.getItem('books'));
+    books = books.filter(function (book){
+        return book.id !== selectedBook.id;
+    });
+    localStorage.setItem('books', JSON.stringify(books));
 }
 
 
@@ -68,5 +73,13 @@ if (deleteBookBtn) {
         deleteBook()
 
         window.location.href = '../pages/allBooks.html'
+    })
+}
+
+const Borrow_button = document.getElementById('Borrow_button');
+if (Borrow_button){
+    Borrow_button.addEventListener('click', function () {
+        sessionStorage.setItem('selectedBook', JSON.stringify(book))
+        window.location.href = '../userPages/userBorrowedBooks.html'
     })
 }

@@ -67,7 +67,7 @@ document.getElementById('save').addEventListener('click', function (event) {
     localStorage.setItem('books', JSON.stringify(booksList));
 
    
-   // window.location.href = '../pages/allBooks.html';
+   window.location.href = '../pages/allBooks.html';
 });
 
 

@@ -1,14 +1,15 @@
 import { booksList } from "../modules/books.js"
 import { logOut, renderNavBar } from "../modules/navBar.js"
 
-localStorage.setItem('books', JSON.stringify(booksList))
+
+let booksArr = JSON.parse(localStorage.getItem('books')) || []
 
 const bookListSection = document.getElementById('book-list')
 
 export function viewBookDetails(event) {
 
     window.location.href = '../pages/bookDetails.html'
-    let selectedBook = booksList.filter(book => {
+    let selectedBook = booksArr.filter(book => {
         return book.id == event.target.id
     })[0]
     
@@ -27,7 +28,7 @@ document.addEventListener('click', function (event) {
 
 
 function getBooks() {
-    let booksHtml = booksList.map(book => {
+    let booksHtml = booksArr.map(book => {
         return `<div class="book-item">
         <img src="${book.bookCover}" alt="${book.name} book" id="${book.id}">
         <h3>${book.name}</h3>
@@ -61,4 +62,4 @@ if (logOutBtn) {
         logOut()
     })
 }
-localStorage.setItem('books', JSON.stringify(booksList))
+localStorage.setItem('books', JSON.stringify(booksArr))
