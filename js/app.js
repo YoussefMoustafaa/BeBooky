@@ -132,9 +132,6 @@ let Books = {
 //             this.description = description;
 //             this.rating = rating;
 //             this.isBorrowed = isBorrowed;
-// let Books = {
-//   data: [JSON.parse(localStorage.getItem('books'))]
-// }
 
 let navBar = document.getElementById('nav-bar')
 

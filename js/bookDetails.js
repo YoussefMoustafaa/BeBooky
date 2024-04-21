@@ -77,7 +77,7 @@ if (deleteBookBtn) {
 }
 
 const Borrow_button = document.getElementById('Borrow_button');
-if (Borrow_button){
+if (Borrow_button) {
     Borrow_button.addEventListener('click', function () {
         sessionStorage.setItem('selectedBook', JSON.stringify(book))
         window.location.href = '../userPages/userBorrowedBooks.html'

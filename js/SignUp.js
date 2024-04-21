@@ -52,6 +52,7 @@ let AddUser = () => {
         count++,
         username,
         password.value,
+        [],
         isChecked()
     );
     let storedUsers = JSON.parse(localStorage.getItem('users'))
