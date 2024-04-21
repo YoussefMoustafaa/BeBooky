@@ -1,6 +1,6 @@
 import { renderNavBar } from "../modules/navBar.js"
 import { usersList } from "../modules/users.js"
-import { booksList } from "../modules/books.js";
+
 
 let navBar = document.getElementById('nav-bar')
 
@@ -10,23 +10,28 @@ let navBar = document.getElementById('nav-bar')
 if (navBar)
     navBar.innerHTML = renderNavBar(usersList[0])
 
-const book = JSON.parse(sessionStorage.getItem('selectedBook')) || null;
+    const book = JSON.parse(sessionStorage.getItem('selectedBook'));
+    function updateBookDetails() {
+        sessionStorage.setItem('selectedBook', JSON.stringify(book));
+    }
 
 console.log(document.getElementById('bookname'));
 
-document.getElementById('bookname').value = book.name;
-document.getElementById('author').value = book.author;
-document.getElementById('bookid').value = book.id;
-document.getElementById('no_of_pages').value = book.numberOfPages;
-document.getElementById('category').value = book.category.join(', ');
-document.getElementById('rating').value = book.rating;
-document.getElementById('description').value = book.description;
+    document.getElementById('bookname').value = book.name;
+    document.getElementById('author').value = book.author;
+    document.getElementById('bookid').value = book.id;
+    document.getElementById('no_of_pages').value = book.numberOfPages;
+    document.getElementById('category').value = book.category.join(', ');
+    document.getElementById('rating').value = book.rating;
+    document.getElementById('description').value = book.description;
+    document.getElementById('img').src = book.bookCover;
+
 
 document.getElementById('editbookform').addEventListener('change', function () {
     book.name = document.getElementById('bookname').value;
-    book.author = document.getElementById('author name').value;
+    book.author = document.getElementById('author').value;
     document.getElementById('bookid').value = book.id;
-    book.numberOfPages = document.getElementById('no of pages').value;
+    book.numberOfPages = document.getElementById('no_of_pages').value;
     book.category = document.getElementById('category').value.split(', ');
     book.rating = document.getElementById('rating').value;
     book.description = document.getElementById('description').value;
@@ -48,14 +53,22 @@ document.getElementById('upImg').addEventListener('change', function (event) {
         reader.readAsDataURL(file);
     }
 });
-// handlet el button
 document.getElementById('save').addEventListener('click', function (event) {
-    event.preventDefault(); 
-    const index = booksList.findIndex(b => b.id == book.id);
-    if (index !== -1) {
-        booksList[index] = book;
+    event.preventDefault()
+    updateBookDetails();
+    let booksList = JSON.parse(localStorage.getItem('books'));
+    const editedBookIndex = booksList.findIndex(item => item.id === book.id);
+
+    if (editedBookIndex !== -1) {
+        booksList[editedBookIndex] = book;
     }
-    window.location.href = '../pages/allbooks.html'; 
+
+  
+    localStorage.setItem('books', JSON.stringify(booksList));
+
+   
+   // window.location.href = '../pages/allBooks.html';
 });
+
 
 
