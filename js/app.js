@@ -1,3 +1,5 @@
+import { renderNavBar } from "../modules/navBar.js";
+
 let Books = {
     data:[
         {
@@ -121,10 +123,25 @@ let Books = {
         },
     ],
 };
-
+//             this.id = id;
+//             this.name = name;
+//             this.author = author;
+//             this.category = category;
+//             this.numberOfPages = numberOfPages;
+//             this.bookCover = bookCover;
+//             this.description = description;
+//             this.rating = rating;
+//             this.isBorrowed = isBorrowed;
 // let Books = {
 //   data: [JSON.parse(localStorage.getItem('books'))]
 // }
+
+let navBar = document.getElementById('nav-bar')
+
+let usersList = JSON.parse(localStorage.getItem('users'))
+
+if (navBar)
+  navBar.innerHTML = renderNavBar(usersList[1])
 
 for (let i of Books.data){
 

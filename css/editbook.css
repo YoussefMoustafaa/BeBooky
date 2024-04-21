@@ -38,7 +38,7 @@ html , body {
 }
 
 .body-container-edit form > div {
-    height: 100vh;
+    height: 87vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
