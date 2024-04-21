@@ -31,25 +31,37 @@ html , body {
     src: url(../fonts/Lato/Lato-Black.ttf);
     
 }
-#right{
-    margin-top: 90px;
-    width: 60%;
-    height: 120vh;
-    float: right;
-    background-color: var(--T200);
-    background-color: white;
-    display: inline-block;
+.body-container-add form {
+    display: flex;
+    flex-direction: row;
 }
+
+.body-container-add form > div {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#right{
+    background-color: var(--S50);
+    align-items: center;
+    font-size: 15px;
+    overflow: auto;
+    display: inline-block;
+    width: 100%;
+    padding-right: 50px;
+}
+
 #left{
-    
-    position: fixed;
-    width:40%;
-    height: 100%;
+    width:60%;
     float: left;
     background-color: var(--S100);
-    margin-top: 60px;
-    
+    top: 0;
+    left: 0;
+    bottom: 0;
 }
+
 h2{
     margin-left: 20px;
     font-family: myfont, serif;
@@ -60,32 +72,30 @@ h2{
     font-size: 200%;
 }
 #leftTitle{
-    margin-left: 30px;
-    margin-bottom: 1em;
-    padding:50px 50px 0px 30px;
-    color: var(--T900);
-    font-family: myfont , serif;
+    margin-left: 20px;
+    padding: 0px 0px 10px 30px;
+    color: var(--T800);
+    font-family: myfont, serif;
     font-weight: bold;
     font-style: normal;
-    font-size: 200%;
-    max-height: 200px;
+    font-size: 30px;
+
 }
 
 
 #leftImg{
-    padding-left: 70px;
-    width: 75%;
-    height: 40%;
-    max-height: 400px;
-    
+    margin: 0 calc(100% / 5);
+    max-width: 240px;
 }
 
 #leftText{
-    padding :40px 0px 0 80px;
-    font-family: myfont , serif;
+    margin-left: 20px;
+    padding: 0px 0px 10px 30px;
+    color: var(--T800);
+    font-family: myfont, serif;
+    font-weight: bold;
+    font-style: normal;
     font-size: 30px;
-    margin-right: 50px;
-    color:var(--T900);
     
 }
 #submit{
@@ -218,7 +228,7 @@ textarea{
 }
 #imgFrame{
     width: 40%;
-    height: 450px;
+    height: 300px;
     padding: 2%;
     box-shadow: 0px 0px 10px var(--T900,0.1);
     margin: 40px 40px 30px 70px;
@@ -241,4 +251,3 @@ textarea{
     padding: 15px ;
     margin-bottom: 250px;
 }
-

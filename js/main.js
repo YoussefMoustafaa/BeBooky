@@ -61,3 +61,4 @@ if (logOutBtn) {
         logOut()
     })
 }
+localStorage.setItem('books', JSON.stringify(booksList))
