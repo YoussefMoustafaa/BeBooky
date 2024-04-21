@@ -73,7 +73,6 @@ form.addEventListener('submit', (e) => {
 //     event.preventDefault();
 //     window.location.href = '#';
 // }
-
 const unSignedNavBar = `
 <a href="../pages/index.html" id="header-title">BeBooky</a>
 <ul id="menu-links">
