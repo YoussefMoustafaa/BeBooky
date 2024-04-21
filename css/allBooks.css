@@ -38,19 +38,22 @@ body{
 
 .wrapper{
     width: 35%;
-    margin: 0 34em;
+    margin: 0 auto;
 }
 
 #search-container{
-    margin: 1em 1em;
+    margin: 1em auto;
+    /* text-align: center; */
+    display: flex;
+
 }
 
 #search-container input{
     background-color: transparent;
-    width: 77%;
+    width: 72%;
     border-bottom: 2px solid #0F766E;
     padding: 1em 2em;
-    margin-top: 0.5em;
+    /* margin-top: 0.5em; */
     font-weight: 545;
     font-size: large;
 }
@@ -87,19 +90,20 @@ body{
 
 #Books{
     display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-column-gap: 2em;
-    padding: 5em 18em;
+    margin-top: 20px;
+    padding: 1em;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .card{
     background-color: #ffffff;
     border: 2px solid #0D9488;
-    width: 15.5em;
+    width: 14em;
+    /* max-width: 250px; */
     height: 22em;
     margin-top: 2em;
-    margin-left:  -4em;
-    margin-right: 7.2em;
+    margin-left:  4em;
+    /* margin-right: 7.2em; */
     padding: 1em;
     border-radius: 8px;
     box-shadow: 1em 1em 1.5em rgba(1, 2, 68, 0.1);
@@ -144,9 +148,3 @@ img{
     display: none;
 }
 
-/* Filter Layout */
-
-.filter-container {
-    display: flex;
-    justify-content: start;
-}

@@ -28,7 +28,7 @@ let user3 = new User(
     true
 )
 
-export const usersList = [
+const usersList = [
     user1,
     user2,
     user3

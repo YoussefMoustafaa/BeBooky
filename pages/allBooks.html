@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/allBooks.css">
-    <title>Search Books</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Filters</title>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800
+        ;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"/>         
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="../css/allBooks.css"/>
+        <i class="fa-solid fa-star"></i>
+    </head>
     <header>
         <nav id="nav-bar" class="bg-nav-bar">
             <!-- <a href="./index.html" id="header-title">BeBooky</a>
@@ -22,38 +25,35 @@
             </ul> -->
         </nav>
     </header>
-    <main>
-        <section class="filter-container">
-            <div>
-                <div class="wrapper">
+    <body>
+        <div class="wrapper">
 
-                    <div id="search-container">
-                    <input type="search" id="search-input" placeholder="Search by Title or Author..."/>            
-                    <button id="search">Search</button>
-                    </div>
-        
-                    <div id="buttons">
-                    <button class="button-value" onclick="filterBook('All Books')">All Books</button>
-                    <button class="button-value" onclick="filterBook('Art')">Art</button>
-                    <button class="button-value" onclick="filterBook('Education')">Education</button>
-                    <button class="button-value" onclick="filterBook('Romance')">Romance</button>
-                    <button class="button-value" onclick="filterBook('Fantasy')">Fantasy</button>
-                    <button class="button-value" onclick="filterBook('History')">History</button>
-                    <button class="button-value" onclick="filterBook('Fiction')">Fiction</button>
-                    <button class="button-value" onclick="filterBook('Comics')">Comics</button>
-                    <button class="button-value" onclick="filterBook('Other..')">Other..</button>                              
-                    </div>                    
-                </div>
-                
-                <div id="cards"></div>
-        
-                <div id="Books"></div>
-            </div>
-        </section>
-        <section id="all-books-list" class="main-book-list">
+          <div id="search-container">
+            <input type="search" id="search-input" placeholder="Search by Title or Author..."/>            
+            <button id="search">Search</button>
+          </div>
+
+          <div id="buttons">
+            <button class="button-value" onclick="filterBook('All Books')">All Books</button>
+            <button class="button-value" onclick="filterBook('Art')">Art</button>
+            <button class="button-value" onclick="filterBook('Education')">Education</button>
+            <button class="button-value" onclick="filterBook('Romance')">Romance</button>
+            <button class="button-value" onclick="filterBook('Fantasy')">Fantasy</button>
+            <button class="button-value" onclick="filterBook('History')">History</button>
+            <button class="button-value" onclick="filterBook('Fiction')">Fiction</button>
+            <button class="button-value" onclick="filterBook('Comics')">Comics</button>
+            <button class="button-value" onclick="filterBook('Other..')">Other..</button>                              
+          </div>                    
+        </div>
+       
+        <div id="cards">
             
-        </section>
-    </main>
-    <script type="module" src="../js/allBooks.js"></script>
-</body>
-</html>
+        </div>
+        
+        
+        <div id="Books"></div>
+        
+    <!-- J.Script -->
+    <script src="../js/app.js"></script>              
+
+    </body>

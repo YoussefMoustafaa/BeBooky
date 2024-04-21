@@ -1,3 +1,7 @@
+// import { getUsers, saveUsers } from "../modules/users.js";
+
+let usersList = JSON.parse(localStorage.getItem('users')) || []
+
 let password = document.querySelector("#password"),
 confirmPassword = document.querySelector("#ConfirmPassword"),
 
@@ -29,26 +33,39 @@ let confirmToggleVisibility = () => {
 // check if checkbox is checked as admin or user
 let isChecked = () =>{
     let Admin = document.querySelector("#isAdmin");
-    return(Admin.checked)?"true":"false";
+    return(Admin.checked)? true : false;
+}
+
+
+class User {
+    constructor(userID, username, password, isAdmin) {
+        this.userID = userID;
+        this.username = username;
+        this.password = password;
+        this.isAdmin = isAdmin;
+    }
 }
 
 
 
-// import {User, usersList} from "../JS/users.js";
-
-let username = document.querySelector("#username").value,
-email = document.getElementById('email').value,
-count = 4;
-
 let AddUser = () => {
+    let username = document.querySelector("#username").value,
+    email = document.getElementById('email').value,
+    count = 4;
     let newUser = new User(
         count++,
         username,
         password.value,
         isChecked()
     );
-    localStorage.setItem('newUser', JSON.stringify(usersList));
+    let storedUsers = JSON.parse(localStorage.getItem('users'))
+    if(storedUsers == null){
+        storedUsers = [];
+    }
+    storedUsers.push(newUser)
+    localStorage.setItem('users', JSON.stringify(storedUsers))
 }
+
 
 
 let PassMin = () => {
@@ -88,26 +105,33 @@ let checkUserIsValid = (value) =>{
     })
 
     if (isUsernameExists == true) {
-        let add = `
-        <p  style = "color: red; margin-bottom: 5px; display: flex; align-items: center;"><i class="material-icons" style = "color: red;">error</i> username already exists, try another</p>`;
-        let div = document.querySelector(".Username");
-        
-        div.insertAdjacentHTML('afterend', add);    
+        document.querySelector(".user").innerHTML = `<i class="material-icons" style = "color: red;">error</i> username already exists, try another`;
+        document.querySelector(".user").style.color = "red";
     } else {
-        let add = `
-        <p  style = "color: green; margin-bottom: 5px; display: flex; align-items: center;"><i class="material-icons" style = "color: green;">check_circle</i> username is valid</p>`;
-        let div = document.querySelector(".Username");
-        
-        div.insertAdjacentHTML('afterend', add);    
+        document.querySelector(".user").innerHTML = `<i class="material-icons" style = "color: red;">error</i> username already exists, try another`;        
+        document.querySelector(".user").style.color = "green";
     }
 }
 
-function submit(event) {
-    event.preventDefault();
+// if(password.value != ''){
+//     if(password.value.length < 8){
+//         document.querySelector(".min").innerHTML = `Password Must contain at least 8 charcaters`;
+//     } else {
+//         document.querySelector(".min").innerHTML = ``;
+//     }
+// } else {
+//     document.querySelector(".min").innerHTML = ``;
+// }
+
+let form = document.getElementById('sign-up-form')
+
+form.addEventListener('submit', e => {
+    e.preventDefault()
+
     AddUser();
 
     window.location.href = 'Login.html';
-}
+})
 
 
     // let formData = JSON.parse(localStorage.getItem('formData')) || [];

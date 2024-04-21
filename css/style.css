@@ -76,8 +76,9 @@ nav ul {
 }
 
 nav {
+    margin-top: -2%;
     background-color: white;
-    position: sticky;
+    position: fixed;
     width: 100%;
     display: flex;
     justify-content: space-between;
