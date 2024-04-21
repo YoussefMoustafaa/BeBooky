@@ -1,7 +1,5 @@
 // import {User, usersList} from "../JS/users.js";
 
-let usersList = JSON.parse(localStorage.getItem('users')) || []
-
 let password = document.querySelector("#password");
 
 let show = "visibility";
@@ -29,44 +27,40 @@ let PassMin = () => {
     }
 }
 
-let flag = true
+// let findUser = () => {
+//     let foundUser = usersList.filter(user => {
+//         return (user.username === username && user.password === password)
+//     })[0];
 
-let form = document.getElementById("log-in-form");
+//     if (foundUser){
+//         localStorage.setItem('user', JSON.stringify(foundUser))
+//     } else {
+//         let add = `
+//         <p  style = "color: red; margin-bottom: 5px; display: flex; align-items: center;">
+//         <i class="material-icons" style = "color: red;">error</i>
+//          Account not found, please check username and password</p>`;
+//         let form = document.querySelector("form");
+        
+//         // Add 'add' variable after form
+//         form.insertAdjacentHTML('afterend', add);    
+//     }
+// }
 
-let findUser = (username, password) => {
-    let foundUser = usersList.filter(user => {
-        return (user.username === username && user.password === password)
-    })[0];
-    if (foundUser){
-        localStorage.setItem('activeUser', JSON.stringify(foundUser))
-        window.location.href = '../index.html'
-    } else {
-        if (flag) {
-            let add = `
-            <p  style = "color: red; margin-bottom: 5px; display: flex; align-items: center;">
-            <i class="material-icons" style = "color: red;">error</i>
-             Account not found, please check username and password</p>`;
-            
-            // Add 'add' variable after form
-            form.insertAdjacentHTML('afterend', add);    
-            flag = false
-        }
-    }
-}
-
+let form = document.getElementsByTagName("form");
 
 if(localStorage.getItem('username') && localStorage.getItem("password")){
     document.getElementById("username").value = localStorage.getItem("username");
     document.getElementById("password").value = localStorage.getItem("password");
 }
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    let username = document.getElementById("username").value;
-    let password = document.getElementById("password").value;
-    findUser(username, password)
+// form.addEventListener('submit', (e) => {
+//     e.preventDefault();
+//     let username = document.getElementById("username").value;
+//     let password = document.getElementById("password").value;
+//     localStorage.setItem('username',username);
+//     localStorage.setItem('password',password);
 
-});
+// });
 
 // function submitForm(event) {
 
