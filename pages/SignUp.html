@@ -22,29 +22,33 @@
     <div class = "body-container">
         <div class = "signup-form">
             <h1>Sign Up</h1>
-            <form>
+            <form onsubmit="submit(event)">
                 <label for = "username">Username</label>
-                <div>
-                    <i class="material-icons">person</i>
-                    <input type = "text" required id = "username" placeholder = "Username">
+                <div class = "Username">
+                    <i class = "material-icons">person</i>
+                    <input type = "text" required id = "username" placeholder = "Username" onkeyup = "checkUserIsValid(value)">
                 </div>
                 <label for = "password">Password</label>
                 <div>
                     <i class="material-icons">lock</i>
-                    <input type = "password" required minlength = "8" maxlength = "20" id = "password" placeholder = "Password">
+                    <input type = "password" required minlength = "8" maxlength = "20" id = "password" placeholder = "Password" onkeyup="PassMin()">
+                    <i class="material-icons" id = "visibile" onclick = "ToggleVisibility()">visibility</i>
                 </div>
+                <p class = "min" style="margin-bottom: 5px; display: flex; align-items: center;"></p>
                 <label for = "ConfirmPassword">Confirm Password</label>
-                <div>
+                <div class="confirm">
                     <i class="material-icons">lock</i>
-                    <input type = "password" required minlength = "8" maxlength = "20" id = "ConfirmPassword" placeholder = "Confirm Password">
+                    <input type = "password" required minlength = "8" maxlength = "20" id = "ConfirmPassword" placeholder = "Confirm Password" onkeyup="PassCheck()">
+                    <i class="material-icons" id = "visibileConfirm" onclick = "confirmToggleVisibility()">visibility</i>
                 </div>
+                <p class = "message" style="margin-bottom: 5px; display: flex; align-items: center;"></p>
                 <label for = "email">Email Address</label>
                 <div>
                     <i class="material-icons">mail</i>
                     <input type = "email" required id = "email" placeholder = "Email">
                 </div>
                 <div>
-                    <input id = "isAdmin" type="checkbox" name = "User Type" value = "Admin">
+                    <input id = "isAdmin" type="checkbox" name = "User Type" value = "Admin" onclick = "isChecked()">
                     <label for = "isAdmin">Admin</label>
                 </div>
                 <input type="submit" value = "Sign Up">
@@ -56,5 +60,7 @@
             <img src = "../images/Book-Lover-Bro.svg" alt = "A woman enjoying reading">
         </div>
     </div>
+
+    <script src = "../js/SignUp.js"></script>
 </body>
 </html>
