@@ -184,7 +184,8 @@ function filterBook(value){
     
     if (value == "All Books") {
       element.classList.remove("hide");
-    } else {      
+    } 
+    else {      
       if (element.classList.contains(value)) {
         element.classList.remove("hide");
       } else {        
