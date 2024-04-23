@@ -95,7 +95,7 @@ if (editBookBtn) {
     editBookBtn.addEventListener('click', function () {
         sessionStorage.setItem('selectedBook', JSON.stringify(book))
     
-        window.location.href = '../adminPages/editBook.html'
+        window.location.href = '../pages/editBook.html'
     })
 
 }

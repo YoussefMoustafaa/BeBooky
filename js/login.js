@@ -39,7 +39,7 @@ let findUser = (username, password) => {
     })[0];
     if (foundUser){
         localStorage.setItem('activeUser', JSON.stringify(foundUser))
-        window.location.href = '../index.html'
+        window.location.href = '../pages/index.html'
     } else {
         if (flag) {
             let add = `
