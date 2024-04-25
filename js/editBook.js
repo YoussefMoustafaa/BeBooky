@@ -50,10 +50,10 @@ if (navBar) {
     }
 }
 
-    const book = JSON.parse(sessionStorage.getItem('selectedBook'));
-    function updateBookDetails() {
-        sessionStorage.setItem('selectedBook', JSON.stringify(book));
-    }
+const book = JSON.parse(sessionStorage.getItem('selectedBook'));
+function updateBookDetails() {
+    sessionStorage.setItem('selectedBook', JSON.stringify(book));
+}
 
 console.log(document.getElementById('bookname'));
 
@@ -61,7 +61,7 @@ console.log(document.getElementById('bookname'));
     document.getElementById('author').value = book.author;
     document.getElementById('bookid').value = book.id;
     document.getElementById('no_of_pages').value = book.numberOfPages;
-    document.getElementById('category').value = book.category.join(', ');
+    document.getElementById('category').value = book.category;
     document.getElementById('rating').value = book.rating;
     document.getElementById('description').value = book.description;
     document.getElementById('img').src = book.bookCover;
