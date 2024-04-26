@@ -303,6 +303,23 @@ document.getElementById("searchauthor").addEventListener("click", () => {
   });
 });
 
+document.getElementById("searchauthor").addEventListener("click", () => {
+
+  let searchInput = document.getElementById("Author-input").value.toUpperCase();
+  let elements = document.querySelectorAll(".Autor-name") ;
+  let cards = document.querySelectorAll(".card");
+
+  elements.forEach((element, index) => {
+
+    if (element.innerText.includes(searchInput)) {
+      cards[index].classList.remove("hide");
+    }
+    else {
+      cards[index].classList.add("hide");
+    }
+  });
+});
+
 window.onload = () => {
     filterBook("All Books");
 };
