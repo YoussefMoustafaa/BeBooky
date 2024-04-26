@@ -14,8 +14,7 @@ else{
     let users = JSON.parse(localStorage.getItem('users'))
     console.log(users);
 
-    
-         users = users.filter((user) => {
+    users = users.filter((user) => {
         // console.log(user.username)
         // console.log(activeUser.username);
         return user.username != activeUser.username 
@@ -30,7 +29,7 @@ else{
     
 
 
-     localStorage.setItem('user', JSON.stringify(users))
+    localStorage.setItem('user', JSON.stringify(users))
 
    localStorage.setItem('activeUser', JSON.stringify(activeUser))
 

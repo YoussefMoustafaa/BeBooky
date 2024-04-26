@@ -206,7 +206,7 @@ let storedBooks = JSON.parse(localStorage.getItem('books'))
 if (booksList) {
   booksList.addEventListener('click', (event) => {
     if (event.target.id) {
-      window.location.href = '../pages/bookDetails.html'
+      // window.location.href = '../pages/bookDetails.html'
       console.log(event.target.id);
       let selectedBook = storedBooks.filter(book => {
           return book.id == event.target.id

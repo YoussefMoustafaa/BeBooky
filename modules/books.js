@@ -75,9 +75,72 @@ let book3 = new Book(
     4.7,
     false
 )
+let book11 = new Book(
+    12,
+    "The Guns of August",
+    "Barbara W. Tuchman",
+    ["History"],
+    300,
+    "../images/The Guns Of August.jpg",
+    book3Des,
+    4.7,
+    false
+)
+
+let book21 = new Book(
+    600,
+    "A World Undone",
+    "G. J. Meyer",
+    ["History"],
+    300,
+    "../images/A World Undone.jpg",
+    book2Des,
+    4.4,
+    false
+)
+
+let bookk = new Book(
+    12,
+    'ok',
+    'ds',
+    [1],
+    23,
+    'dsff',
+    'sdfh',
+    2.3,
+    false
+)
+
+let book31 = new Book(
+    120,
+    "Batman: The Killing Joke",
+    "Alan Moore",
+    ["Comics"],
+    300,
+    "../images/Batman The Killing Joke.jpg",
+    book1Des,
+    4.8,
+    false
+)
+
+let book4 = new Book(
+    111,
+    "Picture this",
+    "Molly Bang",
+    ["Art"],
+    200,
+    "../images/Picture this.jpg",
+    book3Des,
+    4.2,
+    false
+)
 
 export let booksList = [
     book1,
     book2,
-    book3
+    book3,
+    book4,
+    book11,
+    book21,
+    book31
 ]
