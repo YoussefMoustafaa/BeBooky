@@ -182,47 +182,83 @@ if (navBar) {
     }
 }
 
-for (let i of Books.data){
+const booksList = document.getElementById('Books')
+let storedBooks = JSON.parse(localStorage.getItem('books'))
+
+  let booksHtml = storedBooks.map(book => {
+    return `<div class="card ${book.category[0]}">
+    <div class="image-container">
+        <img src="${book.bookCover}" alt="${book.name}" id=${book.id}>
+    </div>
+    <div class="container">
+      <h3 class="Book-name">${book.name}</h3>
+      <h6 class="Autor-name">${book.author}</h6>
+      <h2>
+        <i class="star-icon">&#9733;</i>
+        4.1
+      </h2>
+    </div>
+  </div>`
+  })
+  booksList.innerHTML = booksHtml.join('')
 
 
-    let card = document.createElement("div");
-    card.classList.add("card",i.category,"hide");
+if (booksList) {
+  booksList.addEventListener('click', (event) => {
+    if (event.target.id) {
+      window.location.href = '../pages/bookDetails.html'
+      console.log(event.target.id);
+      let selectedBook = storedBooks.filter(book => {
+          return book.id == event.target.id
+      })[0]
+      console.log(selectedBook);
+      
+      sessionStorage.setItem('selectedBook', JSON.stringify(selectedBook))
+    }
+  })
+}
+
+// for (let i of Books.data){
 
 
-    let imgcontainer = document.createElement("div");
-    imgcontainer.classList.add("image-container");
+//     let card = document.createElement("div");
+//     card.classList.add("card",i.category,"hide");
 
 
-    let image = document.createElement("img");
-    image.setAttribute("src",i.image);
-    imgcontainer.appendChild(image);
-    card.appendChild(imgcontainer);
+//     let imgcontainer = document.createElement("div");
+//     imgcontainer.classList.add("image-container");
 
 
-    let container = document.createElement("div");
-    container.classList.add("container");
+//     let image = document.createElement("img");
+//     image.setAttribute("src",i.image);
+//     imgcontainer.appendChild(image);
+//     card.appendChild(imgcontainer);
 
 
-    let name=document.createElement("h3");
-    name.classList.add("Book-name");
-    name.innerText = i.BookName.toUpperCase();
-    container.appendChild(name);
+//     let container = document.createElement("div");
+//     container.classList.add("container");
 
 
-    let author=document.createElement("h6");
-    author.classList.add("Autor-name")
-    author.innerText = i.Author.toUpperCase();
-    container.appendChild(author);
+//     let name=document.createElement("h3");
+//     name.classList.add("Book-name");
+//     name.innerText = i.BookName.toUpperCase();
+//     container.appendChild(name);
 
 
-    let rating=document.createElement("h2");
-    rating.innerHTML = `<i class="star-icon">&#9733;</i> ${i.rate}`;
-    container.appendChild(rating);
+//     let author=document.createElement("h6");
+//     author.classList.add("Autor-name")
+//     author.innerText = i.Author.toUpperCase();
+//     container.appendChild(author);
+
+
+//     let rating=document.createElement("h2");
+//     rating.innerHTML = `<i class="star-icon">&#9733;</i> ${i.rate}`;
+//     container.appendChild(rating);
 
     
-    card.appendChild(container);
-    document.getElementById("Books").appendChild(card);
-}
+//     card.appendChild(container);
+//     document.getElementById("Books").appendChild(card);
+// }
 
 function filterBook(value){
     let buttons= document.querySelectorAll(".button-value")
@@ -250,23 +286,22 @@ function filterBook(value){
   });
 }
 
-document.getElementById("search").addEventListener("click", () => {
+document.getElementById("searchauthor").addEventListener("click", () => {
 
-    let searchInput = document.getElementById("search-input").value.toUpperCase();
-    let elements = document.querySelectorAll(".Book-name") ;
-    let cards = document.querySelectorAll(".card");
+  let searchInput = document.getElementById("Author-input").value.toUpperCase();
+  let elements = document.querySelectorAll(".Autor-name") ;
+  let cards = document.querySelectorAll(".card");
 
-    elements.forEach((element, index) => {
+  elements.forEach((element, index) => {
 
-      if (element.innerText.includes(searchInput)) {
-        cards[index].classList.remove("hide");
-      }
-       else {
-        cards[index].classList.add("hide");
-      }
-      
-    });
+    if (element.innerText.includes(searchInput)) {
+      cards[index].classList.remove("hide");
+    }
+    else {
+      cards[index].classList.add("hide");
+    }
   });
+});
 
 window.onload = () => {
     filterBook("All Books");

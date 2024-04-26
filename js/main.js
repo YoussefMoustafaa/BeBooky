@@ -1,4 +1,4 @@
-import { booksList } from "../modules/books.js"
+import { Book, booksList } from "../modules/books.js"
 import { logOut, renderNavBar } from "../modules/navBar.js"
 
 
@@ -105,6 +105,7 @@ if (logOutBtn) {
         logOut()
     })
 }
+
 localStorage.setItem('books', JSON.stringify(booksArr))
 
 let activeuser = JSON.parse(localStorage.getItem('activeUser'))

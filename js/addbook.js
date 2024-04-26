@@ -89,11 +89,11 @@ if(addBookForm) {
         
         const bookName = document.getElementById("bookName").value;
         const author = document.getElementById("author").value;
-const category = document.getElementById("category").value;
-const no_of_pages = document.getElementById("no_of_pages").value;
-const rating = document.getElementById("rating").value;
-const description = document.getElementById("description").value;
-const bookCover = sessionStorage.getItem("uploadedImageData"); 
+        const category = document.getElementById("category").value.split(',');
+        const no_of_pages = document.getElementById("no_of_pages").value;
+        const rating = document.getElementById("rating").value;
+        const description = document.getElementById("description").value;
+        const bookCover = sessionStorage.getItem("uploadedImageData");
 
 
 
