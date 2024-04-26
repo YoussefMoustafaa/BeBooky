@@ -73,7 +73,7 @@ let book3 = new Book(
     book3Img,
     book3Des,
     4.7,
-    true
+    false
 )
 
 export let booksList = [
