@@ -320,8 +320,8 @@ nav li {
 }
 
 footer {
-    display: flex;
-    justify-content: center;
+/*     display: flex;
+    justify-content: center; */
     background-color: var(--T700);
     color: var(--S50);
     padding: 40px;
