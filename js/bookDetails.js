@@ -125,10 +125,29 @@ if (deleteBookBtn) {
 }
 
 const Borrow_button = document.getElementById('Borrow_button');
+let activeuser = JSON.parse(localStorage.getItem("activeUser"));
+
 if (Borrow_button) {
+    
     Borrow_button.addEventListener('click', function () {
+        // book.isBorrowed = true;
+        // activeuser.borrowedBooks.push(book);
+        // console.log(activeuser)
         sessionStorage.setItem('selectedBook', JSON.stringify(book))
+        // localStorage.setItem("activeUser",JSON.stringify(activeuser))
         window.location.href = '../userPages/userBorrowedBooks.html'
     })
 }
+function check_admin() {
+    console.log(activeuser);
+    console.log(Borrow_button);
+        if (activeuser.isAdmin){
+            Borrow_button.style.display = "none";
+        }
+        else{
+            editBookBtn.style.display = "none";
+            deleteBookBtn.style.display = "none";  
+        }
+}
+check_admin();
 

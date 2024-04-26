@@ -106,3 +106,17 @@ if (logOutBtn) {
     })
 }
 localStorage.setItem('books', JSON.stringify(booksArr))
+
+let activeuser = JSON.parse(localStorage.getItem('activeUser'))
+
+function check_admin() {
+    console.log(activeuser);
+    console.log();
+    if (activeuser && activeuser.isAdmin) {
+        const borrowNowButton = document.querySelector('.cta-borrow-now');
+        if (borrowNowButton) {
+            borrowNowButton.style.display = "none";
+        }
+    }
+}
+check_admin();
