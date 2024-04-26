@@ -133,7 +133,11 @@ a {
     padding: 0.6em 1em;
     font-weight: 600;
 }
-
+.center {
+    margin-top: 100px;
+    text-align: center;
+    color: var(--accent700);
+}
 nav li {
     display: inline;
     margin: 0 4px;
