@@ -1,6 +1,3 @@
-
-
-
 const unSignedNavBar = `
 <a href="../pages/index.html" id="header-title">BeBooky</a>
 <ul id="menu-links">
@@ -13,7 +10,7 @@ const unSignedNavBar = `
 `
 
 const UserNavBar = `
-<a href="../userPages/userHomePage.html" id="header-title">BeBooky</a>
+<a href="../pages/index.html" id="header-title">BeBooky</a>
 <ul id="menu-links">
     <li><a href="../pages/index.html">Home</a></li>
     <li><a href="../pages/allBooks.html">All Books</a></li>
@@ -25,11 +22,11 @@ const UserNavBar = `
 `
 
 const AdminNavBar = `
-<a href="../userPages/userHomePage.html" id="header-title">BeBooky</a>
+<a href="../pages/index.html" id="header-title">BeBooky</a>
 <ul id="menu-links">
     <li><a href="../pages/index.html">Home</a></li>
     <li><a href="../pages/allBooks.html">All Books</a></li>
-    <li><a href="../adminPages/addBook.html">Add Book</a></li>
+    <li><a href="../pages/addBook.html">Add Book</a></li>
 </ul>
 <ul id="register-btns">
     <li><a href="../pages/SignUp.html" id="log-out-btn">Log out</a></li>
@@ -38,7 +35,7 @@ const AdminNavBar = `
 
 let navBar = document.getElementById('nav-bar')
 
-let activeUser = document.getElementById('activeUser')
+let activeUser = JSON.parse(localStorage.getItem('activeUser'))
 
 if (navBar) {
     if (!activeUser) {

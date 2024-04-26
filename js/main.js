@@ -61,7 +61,7 @@ const unSignedNavBar = `
 `
 
 const UserNavBar = `
-<a href="../userPages/userHomePage.html" id="header-title">BeBooky</a>
+<a href="../pages/index.html" id="header-title">BeBooky</a>
 <ul id="menu-links">
     <li><a href="../pages/index.html">Home</a></li>
     <li><a href="../pages/allBooks.html">All Books</a></li>
@@ -73,7 +73,7 @@ const UserNavBar = `
 `
 
 const AdminNavBar = `
-<a href="../userPages/userHomePage.html" id="header-title">BeBooky</a>
+<a href="../pages/index.html" id="header-title">BeBooky</a>
 <ul id="menu-links">
     <li><a href="../pages/index.html">Home</a></li>
     <li><a href="../pages/allBooks.html">All Books</a></li>

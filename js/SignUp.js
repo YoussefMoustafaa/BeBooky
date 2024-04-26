@@ -43,11 +43,11 @@ let isChecked = () =>{
     let Admin = document.querySelector("#isAdmin");
     return(Admin.checked)? true : false;
 }
+var count = 4;
 
 let AddUser = () => {
     let username = document.querySelector("#username").value,
-    email = document.getElementById('email').value,
-    count = 4;
+    email = document.getElementById('email').value;
     let newUser = new User(
         count++,
         username,

@@ -1,6 +1,58 @@
 import { renderNavBar } from "../modules/navBar.js"
 import { usersList } from "../modules/users.js"
 
+
+const unSignedNavBar = `
+<a href="../pages/index.html" id="header-title">BeBooky</a>
+<ul id="menu-links">
+    <li><a href="../pages/index.html">Home</a></li>
+</ul>
+<ul id="register-btns">
+    <li><a href="../pages/Login.html" id="login-btn">Log in</a></li>
+    <li><a href="../pages/SignUp.html" id="get-started-btn">Get Started</a></li>
+</ul>
+`
+
+const UserNavBar = `
+<a href="../pages/index.html" id="header-title">BeBooky</a>
+<ul id="menu-links">
+    <li><a href="../pages/index.html">Home</a></li>
+    <li><a href="../pages/allBooks.html">All Books</a></li>
+    <li><a href="../userPages/userBorrowedBooks.html">Borrowed Books</a></li>
+</ul>
+<ul id="register-btns">
+    <li><a href="../pages/SignUp.html" id="log-out-btn">Log out</a></li>
+</ul>
+`
+
+const AdminNavBar = `
+<a href="../pages/index.html" id="header-title">BeBooky</a>
+<ul id="menu-links">
+    <li><a href="../pages/index.html">Home</a></li>
+    <li><a href="../pages/allBooks.html">All Books</a></li>
+    <li><a href="../pages/addBook.html">Add Book</a></li>
+</ul>
+<ul id="register-btns">
+    <li><a href="../pages/SignUp.html" id="log-out-btn">Log out</a></li>
+</ul>
+`
+
+let navBar = document.getElementById('nav-bar')
+
+let activeUser = JSON.parse(localStorage.getItem('activeUser'))
+
+if (navBar) {
+    if (!activeUser) {
+        navBar.innerHTML= unSignedNavBar
+    } else if (activeUser.isAdmin) {
+        navBar.innerHTML= AdminNavBar
+    } else {
+        navBar.innerHTML= UserNavBar
+    }
+}
+
+
+
 let book = JSON.parse(sessionStorage.getItem('selectedBook'))
 
 function renderBookDetails() {
@@ -38,55 +90,6 @@ function renderBookDetails() {
 }
 
 renderBookDetails()
-
-const unSignedNavBar = `
-<a href="../pages/index.html" id="header-title">BeBooky</a>
-<ul id="menu-links">
-    <li><a href="../pages/index.html">Home</a></li>
-</ul>
-<ul id="register-btns">
-    <li><a href="../pages/Login.html" id="login-btn">Log in</a></li>
-    <li><a href="../pages/SignUp.html" id="get-started-btn">Get Started</a></li>
-</ul>
-`
-
-const UserNavBar = `
-<a href="../userPages/userHomePage.html" id="header-title">BeBooky</a>
-<ul id="menu-links">
-    <li><a href="../pages/index.html">Home</a></li>
-    <li><a href="../pages/allBooks.html">All Books</a></li>
-    <li><a href="../userPages/userBorrowedBooks.html">Borrowed Books</a></li>
-</ul>
-<ul id="register-btns">
-    <li><a href="../pages/SignUp.html" id="log-out-btn">Log out</a></li>
-</ul>
-`
-
-const AdminNavBar = `
-<a href="../userPages/userHomePage.html" id="header-title">BeBooky</a>
-<ul id="menu-links">
-    <li><a href="../pages/index.html">Home</a></li>
-    <li><a href="../pages/allBooks.html">All Books</a></li>
-    <li><a href="../adminPages/addBook.html">Add Book</a></li>
-</ul>
-<ul id="register-btns">
-    <li><a href="../pages/SignUp.html" id="log-out-btn">Log out</a></li>
-</ul>
-`
-
-let navBar = document.getElementById('nav-bar')
-
-let activeUser = document.getElementById('activeUser')
-
-if (navBar) {
-    if (!activeUser) {
-        navBar.innerHTML= unSignedNavBar
-    } else if (activeUser.isAdmin) {
-        navBar.innerHTML= AdminNavBar
-    } else {
-        navBar.innerHTML= UserNavBar
-    }
-}
 
 const editBookBtn = document.getElementById('edit-book-btn')
 const deleteBookBtn = document.getElementById('delete-book-btn')
