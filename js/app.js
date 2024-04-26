@@ -286,10 +286,10 @@ function filterBook(value){
   });
 }
 
-document.getElementById("searchauthor").addEventListener("click", () => {
+document.getElementById("search").addEventListener("click", () => {
 
-  let searchInput = document.getElementById("Author-input").value.toUpperCase();
-  let elements = document.querySelectorAll(".Autor-name") ;
+  let searchInput = document.getElementById("search-input").value.toUpperCase();
+  let elements = document.querySelectorAll(".Book-name") ;
   let cards = document.querySelectorAll(".card");
 
   elements.forEach((element, index) => {
@@ -297,9 +297,10 @@ document.getElementById("searchauthor").addEventListener("click", () => {
     if (element.innerText.includes(searchInput)) {
       cards[index].classList.remove("hide");
     }
-    else {
+     else {
       cards[index].classList.add("hide");
     }
+    
   });
 });
 
