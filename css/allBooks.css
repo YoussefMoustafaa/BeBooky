@@ -51,7 +51,7 @@ body{
 #search-container input{
     background-color: transparent;
     width: 60%;
-    border-bottom: 2px solid #0F766E;
+    border-bottom: 2px solid #0D9488;
     padding: 1em 2em;
     /* margin-top: 0.5em; */
     font-weight: 545;
@@ -59,13 +59,13 @@ body{
 }
 
 #search-container input:focus{
-    border-bottom-color: #14B8A6;
+    border-bottom-color: #0D9488;
 }
 
 #search-container button{
     padding: 1em 2em;
     margin-left: 3em;
-    background-color: #0F766E;
+    background-color: #0D9488;
     color: #F5F5F4;
     border-radius: 30px;
     margin-top: 0.5em;
@@ -82,7 +82,7 @@ body{
 #Author-container input{
     background-color: transparent;
     width: 60%;
-    border-bottom: 2px solid #0F766E;
+    border-bottom: 2px solid #0D9488;
     padding: 1em 2em;
     /* margin-top: 0.5em; */
     font-weight: 545;
@@ -90,13 +90,13 @@ body{
 }
 
 #Author-container input:focus{
-    border-bottom-color: #14B8A6;
+    border-bottom-color: #0D9488;
 }
 
 #Author-container button{
     padding: 1em 2em;
     margin-left: 3em;
-    background-color: #0F766E;
+    background-color: #0D9488;
     color: #F5F5F4;
     border-radius: 30px;
     margin-top: 0.5em;
@@ -104,18 +104,18 @@ body{
 }
 
 .button-value{
-    border: 2px solid #0F766E;
+    border: 2px solid #0D9488;
     padding: 1em 2.2em;
     border-radius: 30px;
     background-color: #F5F5F4;
-    color: #0F766E;
+    color: #0D9488;
     cursor: pointer;
     font-weight: 600;
     margin-top: 7px ;
 }
 
 .active{
-    background-color: #0F766E;
+    background-color: #0D9488;
     color: #F5F5F4;
 }
 
