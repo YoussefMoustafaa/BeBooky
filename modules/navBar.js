@@ -1,9 +1,7 @@
 const unSignedNavBar = `
-<a href="../index.html" id="header-title">BeBooky</a>
+<a href="../pages/index.html" id="header-title">BeBooky</a>
 <ul id="menu-links">
-    <li><a href="../index.html">Home</a></li>
-    <li><a href="../userPages/userHomePage.html">User</a></li>
-    <li><a href="../adminPages/adminHomePage.html">Admin</a></li>
+    <li><a href="../pages/index.html">Home</a></li>
 </ul>
 <ul id="register-btns">
     <li><a href="../pages/Login.html" id="login-btn">Log in</a></li>
@@ -12,9 +10,9 @@ const unSignedNavBar = `
 `
 
 const UserNavBar = `
-<a href="../userPages/userHomePage.html" id="header-title">BeBooky</a>
+<a href="../pages/index.html" id="header-title">BeBooky</a>
 <ul id="menu-links">
-    <li><a href="../userPages/userHomePage.html">Home</a></li>
+    <li><a href="../pages/index.html">Home</a></li>
     <li><a href="../pages/allBooks.html">All Books</a></li>
     <li><a href="../userPages/userBorrowedBooks.html">Borrowed Books</a></li>
 </ul>
@@ -24,16 +22,19 @@ const UserNavBar = `
 `
 
 const AdminNavBar = `
-<a href="../userPages/userHomePage.html" id="header-title">BeBooky</a>
+<a href="../pages/index.html" id="header-title">BeBooky</a>
 <ul id="menu-links">
-    <li><a href="../userPages/userHomePage.html">Home</a></li>
+    <li><a href="../pages/index.html">Home</a></li>
     <li><a href="../pages/allBooks.html">All Books</a></li>
-    <li><a href="../adminPages/addBook.html">Add Book</a></li>
+    <li><a href="../pages/addBook.html">Add Book</a></li>
 </ul>
 <ul id="register-btns">
     <li><a href="../pages/SignUp.html" id="log-out-btn">Log out</a></li>
 </ul>
 `
+
+let activeUser = JSON.parse(localStorage.getItem('activeUser'))
+
 
 export function logOut() {
     localStorage.removeItem('activeUser')
@@ -41,10 +42,10 @@ export function logOut() {
 }
 
 
-export function renderNavBar(user) {
-    if (!user) {
+export function renderNavBar() {
+    if (!activeUser) {
         return unSignedNavBar
-    } else if (user.isAdmin) {
+    } else if (activeUser.isAdmin) {
         return AdminNavBar
     } else {
         return UserNavBar

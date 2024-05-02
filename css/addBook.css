@@ -36,6 +36,12 @@ html , body {
     flex-direction: row;
 }
 
+/* @media only screen and (max-width: 800px) {
+    .body-container-add {
+        flex-direction: column;
+    }
+} */
+
 .body-container-add form > div {
     height: 100vh;
     display: flex;
@@ -60,6 +66,7 @@ html , body {
     top: 0;
     left: 0;
     bottom: 0;
+    margin-bottom: 0;
 }
 
 h2{
@@ -79,7 +86,7 @@ h2{
     font-weight: bold;
     font-style: normal;
     font-size: 30px;
-
+    margin-bottom: 0;
 }
 
 

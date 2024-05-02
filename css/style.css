@@ -177,6 +177,12 @@ nav li {
     margin: 0;
 }
 
+@media only screen and (max-width: 600px) {
+    .welcome-container {
+        flex-direction: column;
+    }
+}
+
 .titles-container {
     width: 420px;
     text-align: center;
@@ -241,7 +247,7 @@ nav li {
 }
 
 .scroll-item {
-    margin: 8px auto;
+    margin: 20px auto;
     width: 100px;
     display: flex;
     flex-direction: column;
@@ -288,6 +294,7 @@ nav li {
     text-align: center;
     color: var(--accent);
     font-size: 38px;
+    margin-top: 30px;
 }
 
 .book-item img {
@@ -324,22 +331,6 @@ nav li {
     color: var(--S50);
 }
 
-footer {
-/*     display: flex;
-    justify-content: center; */
-    background-color: var(--T700);
-    color: var(--S50);
-    padding: 40px;
-}
-
-footer a {
-    color: var(--T300);
-}
-
-footer a:hover{
-    color: var(--T500);
-    cursor: pointer;
-}
 
 .book-item button {
     background-color: var(--T600);
@@ -354,5 +345,26 @@ footer a:hover{
 .book-item button:hover {
     background-color: var(--T200);
     color: var(--S900);
+    cursor: pointer;
+}
+
+
+/* footer */
+
+footer {
+/*     display: flex;
+    justify-content: center; */
+    margin-top: 20px;
+    background-color: var(--T700);
+    color: var(--S50);
+    padding: 40px;
+}
+
+footer a {
+    color: var(--T300);
+}
+
+footer a:hover{
+    color: var(--T500);
     cursor: pointer;
 }

@@ -1,3 +1,19 @@
+import { logOut, renderNavBar } from "../modules/navBar.js"
+
+let navBar = document.getElementById('nav-bar')
+
+if (navBar) {
+    navBar.innerHTML = renderNavBar()
+}
+
+const logOutBtn = document.getElementById('log-out-btn')
+
+if (logOutBtn) {
+    logOutBtn.addEventListener('click', function() {
+        logOut()
+    })
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     var img = document.createElement("img");
     img.src = "../images/contact us.png";
@@ -31,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
             Boleka <br>20220087
         </p>
         </form>
+        <p id="statement">.Made by Nada.</p>
     `;
 
 

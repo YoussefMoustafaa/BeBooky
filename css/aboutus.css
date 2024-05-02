@@ -57,3 +57,9 @@ body {
     text-align: justify;
 }
 
+#statement {
+    margin-top: 15px;
+    text-align: center;
+    color: #115e59;
+    font-weight: bold;
+}

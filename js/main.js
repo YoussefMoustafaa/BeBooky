@@ -1,4 +1,3 @@
-import { Book, booksList } from "../modules/books.js"
 import { logOut, renderNavBar } from "../modules/navBar.js"
 
 
@@ -7,7 +6,6 @@ let booksArr = JSON.parse(localStorage.getItem('books')) || []
 const bookListSection = document.getElementById('book-list')
 
 export function viewBookDetails(event) {
-
     window.location.href = '../pages/bookDetails.html'
     let selectedBook = booksArr.filter(book => {
         return book.id == event.target.id
@@ -19,7 +17,7 @@ export function viewBookDetails(event) {
 
 if (bookListSection) {
     bookListSection.addEventListener('click', function (event) {
-        if (event.target.id) {
+        if (event.target.id && event.target.id != "book-list") {
             // window.location.href = `./book.html?id=${event.target.id}`
             viewBookDetails(event)
         }
@@ -30,10 +28,18 @@ if (bookListSection) {
 
 function getBooks() {
     let booksHtml = booksArr.map(book => {
-        return `<div class="book-item">
-        <img src="${book.bookCover}" alt="${book.name} book" id="${book.id}">
-        <h3>${book.name}</h3>
-        <p>${book.author}</p>
+        return `<div class="card">
+        <div class="image-container">
+            <img src="${book.bookCover}" alt="${book.name} book" id="${book.id}">
+        </div>
+        <div class="container">
+          <h3 class="Book-name">${book.name}</h3>
+          <h6 class="Autor-name">${book.author}</h6>
+          <h2>
+            <i class="star-icon">&#9733;</i>
+            ${book.rating}
+          </h2>
+        </div>
         </div>`
     }).join('')
     
@@ -49,53 +55,11 @@ export function renderBooks(bookListConatiner) {
 
 renderBooks(bookListSection)
 
-const unSignedNavBar = `
-<a href="../pages/index.html" id="header-title">BeBooky</a>
-<ul id="menu-links">
-    <li><a href="../pages/index.html">Home</a></li>
-</ul>
-<ul id="register-btns">
-    <li><a href="../pages/Login.html" id="login-btn">Log in</a></li>
-    <li><a href="../pages/SignUp.html" id="get-started-btn">Get Started</a></li>
-</ul>
-`
-
-const UserNavBar = `
-<a href="../pages/index.html" id="header-title">BeBooky</a>
-<ul id="menu-links">
-    <li><a href="../pages/index.html">Home</a></li>
-    <li><a href="../pages/allBooks.html">All Books</a></li>
-    <li><a href="../userPages/userBorrowedBooks.html">Borrowed Books</a></li>
-</ul>
-<ul id="register-btns">
-    <li><a href="../pages/SignUp.html" id="log-out-btn">Log out</a></li>
-</ul>
-`
-
-const AdminNavBar = `
-<a href="../pages/index.html" id="header-title">BeBooky</a>
-<ul id="menu-links">
-    <li><a href="../pages/index.html">Home</a></li>
-    <li><a href="../pages/allBooks.html">All Books</a></li>
-    <li><a href="../pages/addBook.html">Add Book</a></li>
-</ul>
-<ul id="register-btns">
-    <li><a href="../pages/SignUp.html" id="log-out-btn">Log out</a></li>
-</ul>
-`
 
 let navBar = document.getElementById('nav-bar')
 
-let activeUser = JSON.parse(localStorage.getItem('activeUser'))
-
 if (navBar) {
-    if (!activeUser) {
-        navBar.innerHTML= unSignedNavBar
-    } else if (activeUser.isAdmin) {
-        navBar.innerHTML= AdminNavBar
-    } else {
-        navBar.innerHTML= UserNavBar
-    }
+    navBar.innerHTML = renderNavBar()
 }
 
 const logOutBtn = document.getElementById('log-out-btn')
