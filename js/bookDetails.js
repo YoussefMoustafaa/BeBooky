@@ -186,7 +186,7 @@ if (Borrow_button) {
         } else {        // else if the book is not borrowed and available
             borrowBook()
         }
-        window.location.href = '../userPages/userBorrowedBooks.html'
+        window.location.href = '../pages/userBorrowedBooks.html'
     })
 }
 

@@ -1,12 +1,20 @@
-class User {
-    constructor(userID, username, password, borrowedBooks, isAdmin) {
-        this.userID = userID;
-        this.username = username;
-        this.password = password;
-        this.borrowedBooks = borrowedBooks;
-        this.isAdmin = isAdmin;
-    }
+import { logOut, renderNavBar } from "../modules/navBar.js"
+import { User } from "../modules/users.js"
+
+let navBar = document.getElementById('nav-bar')
+
+if (navBar) {
+    navBar.innerHTML = renderNavBar()
 }
+
+const logOutBtn = document.getElementById('log-out-btn')
+
+if (logOutBtn) {
+    logOutBtn.addEventListener('click', function() {
+        logOut()
+    })
+}
+
 
 let usersList = JSON.parse(localStorage.getItem('users')) || []
 
@@ -27,6 +35,12 @@ let ToggleVisibility = () => {
     }
 } 
 
+const visibleIcon = document.getElementById('visibile')
+
+visibleIcon.addEventListener('click', ToggleVisibility)
+
+
+
 // Visibility icon of confirm password field
 let confirmToggleVisibility = () => {
     if(confirmPassword.type === "password") {
@@ -38,11 +52,24 @@ let confirmToggleVisibility = () => {
     }
 }
 
+const visibleConfirm = document.getElementById('visibileConfirm')
+
+visibleConfirm.addEventListener('click', confirmToggleVisibility)
+
+
+
+
 // check if checkbox is checked as admin or user
 let isChecked = () =>{
     let Admin = document.querySelector("#isAdmin");
     return(Admin.checked)? true : false;
 }
+
+const checkAdmin = document.getElementById('isAdmin')
+
+checkAdmin.addEventListener('click', isChecked)
+
+
 var count = 4;
 
 let AddUser = () => {
@@ -76,6 +103,13 @@ let PassMin = () => {
     }
 }
 
+const passwordRequirement = document.getElementById('password')
+
+passwordRequirement.addEventListener('keyup', PassMin)
+
+
+
+
 let message = document.querySelector(".message");
 let PassCheck = () => {
     if(password.value != '' && confirmPassword.value != ''){
@@ -94,6 +128,8 @@ let PassCheck = () => {
         message.innerHTML = ``;
     }
 }
+
+confirmPassword.addEventListener('keyup', PassCheck)
 
 // let flag = true
 // let usernameValidMsg = document.getElementById('username-val-msg')
@@ -142,53 +178,3 @@ form.addEventListener('submit', e => {
 
     window.location.href = 'Login.html';
 })
-
-
-const unSignedNavBar = `
-<a href="../pages/index.html" id="header-title">BeBooky</a>
-<ul id="menu-links">
-    <li><a href="../pages/index.html">Home</a></li>
-</ul>
-<ul id="register-btns">
-    <li><a href="../pages/Login.html" id="login-btn">Log in</a></li>
-    <li><a href="../pages/SignUp.html" id="get-started-btn">Get Started</a></li>
-</ul>
-`
-
-const UserNavBar = `
-<a href="../userPages/userHomePage.html" id="header-title">BeBooky</a>
-<ul id="menu-links">
-    <li><a href="../pages/index.html">Home</a></li>
-    <li><a href="../pages/allBooks.html">All Books</a></li>
-    <li><a href="../userPages/userBorrowedBooks.html">Borrowed Books</a></li>
-</ul>
-<ul id="register-btns">
-    <li><a href="../pages/SignUp.html" id="log-out-btn">Log out</a></li>
-</ul>
-`
-
-const AdminNavBar = `
-<a href="../userPages/userHomePage.html" id="header-title">BeBooky</a>
-<ul id="menu-links">
-    <li><a href="../pages/index.html">Home</a></li>
-    <li><a href="../pages/allBooks.html">All Books</a></li>
-    <li><a href="../adminPages/addBook.html">Add Book</a></li>
-</ul>
-<ul id="register-btns">
-    <li><a href="../pages/SignUp.html" id="log-out-btn">Log out</a></li>
-</ul>
-`
-
-let navBar = document.getElementById('nav-bar')
-
-let activeUser = document.getElementById('activeUser')
-
-if (navBar) {
-    if (!activeUser) {
-        navBar.innerHTML= unSignedNavBar
-    } else if (activeUser.isAdmin) {
-        navBar.innerHTML= AdminNavBar
-    } else {
-        navBar.innerHTML= UserNavBar
-    }
-}

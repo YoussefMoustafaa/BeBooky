@@ -10,16 +10,7 @@
 <body>
     <header>
         <nav id="nav-bar">
-            <!-- <a href="./index.html" id="header-title">BeBooky</a>
-            <ul id="menu-links">
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="userPages/userHomePage.html">User</a></li>
-                <li><a href="adminPages/adminHomePage.html">Admin</a></li>
-            </ul>
-            <ul id="register-btns">
-                <li><a href="pages/UserLogin.html" id="login-btn">Log in</a></li>
-                <li><a href="pages/SignUp.html" id="get-started-btn">Get Started</a></li>
-            </ul> -->
+           
         </nav>
     </header>
     <div class = "body-container">
@@ -34,15 +25,15 @@
                 <label for = "password">Password</label>
                 <div>
                     <i class="material-icons">lock</i>
-                    <input type = "password" required minlength = "8" maxlength = "20" id = "password" placeholder = "Password" onkeyup="PassMin()">
-                    <i class="material-icons" id = "visibile" onclick = "ToggleVisibility()">visibility</i>
+                    <input type = "password" required minlength = "8" maxlength = "20" id = "password" placeholder = "Password">
+                    <i class="material-icons" id = "visibile">visibility</i>
                 </div>
                 <p class = "min" style="margin-bottom: 5px; display: flex; align-items: center;"></p>
                 <label for = "ConfirmPassword">Confirm Password</label>
                 <div class="confirm">
                     <i class="material-icons">lock</i>
-                    <input type = "password" required minlength = "8" maxlength = "20" id = "ConfirmPassword" placeholder = "Confirm Password" onkeyup="PassCheck()">
-                    <i class="material-icons" id = "visibileConfirm" onclick = "confirmToggleVisibility()">visibility</i>
+                    <input type = "password" required minlength = "8" maxlength = "20" id = "ConfirmPassword" placeholder = "Confirm Password">
+                    <i class="material-icons" id = "visibileConfirm">visibility</i>
                 </div>
                 <p class = "message" style="margin-bottom: 5px; display: flex; align-items: center;"></p>
                 <label for = "email">Email Address</label>
@@ -51,7 +42,7 @@
                     <input type = "email" required id = "email" placeholder = "Email">
                 </div>
                 <div>
-                    <input id = "isAdmin" type="checkbox" name = "User Type" value = "Admin" onclick = "isChecked()">
+                    <input id = "isAdmin" type="checkbox" name = "User Type" value = "Admin">
                     <label for = "isAdmin">Admin</label>
                 </div>
                 <input type="submit" value = "Sign Up">
@@ -64,6 +55,6 @@
         </div>
     </div>
 
-    <script src="../js/SignUp.js"></script>
+    <script src="../js/SignUp.js" type="module"></script>
 </body>
 </html>

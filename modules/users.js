@@ -1,4 +1,4 @@
-class User {
+export class User {
     constructor(userID, username, password, borrowedBooks, isAdmin) {
         this.userID = userID;
         this.username = username;

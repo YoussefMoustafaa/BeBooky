@@ -14,7 +14,7 @@ const UserNavBar = `
 <ul id="menu-links">
     <li><a href="../pages/index.html">Home</a></li>
     <li><a href="../pages/allBooks.html">All Books</a></li>
-    <li><a href="../userPages/userBorrowedBooks.html">Borrowed Books</a></li>
+    <li><a href="../pages/userBorrowedBooks.html">Borrowed Books</a></li>
 </ul>
 <ul id="register-btns">
     <li><a href="../pages/SignUp.html" id="log-out-btn">Log out</a></li>
