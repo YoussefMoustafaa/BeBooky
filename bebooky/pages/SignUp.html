@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/SignUp.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>BeBooky| Sign Up</title>
+</head>
+<body>
+    <header>
+        <nav id="nav-bar">
+           
+        </nav>
+    </header>
+    <div class = "body-container">
+        <div class = "signup-form">
+            <h1>Sign Up</h1>
+            <form id="sign-up-form">
+                <label for = "username">Username</label>
+                <div class = "Username">
+                    <i class = "material-icons">person</i>
+                    <input type = "text" required id = "username" placeholder = "Username">
+                </div>
+                <label for = "password">Password</label>
+                <div>
+                    <i class="material-icons">lock</i>
+                    <input type = "password" required minlength = "8" maxlength = "20" id = "password" placeholder = "Password">
+                    <i class="material-icons" id = "visibile">visibility</i>
+                </div>
+                <p class = "min" style="margin-bottom: 5px; display: flex; align-items: center;"></p>
+                <label for = "ConfirmPassword">Confirm Password</label>
+                <div class="confirm">
+                    <i class="material-icons">lock</i>
+                    <input type = "password" required minlength = "8" maxlength = "20" id = "ConfirmPassword" placeholder = "Confirm Password">
+                    <i class="material-icons" id = "visibileConfirm">visibility</i>
+                </div>
+                <p class = "message" style="margin-bottom: 5px; display: flex; align-items: center;"></p>
+                <label for = "email">Email Address</label>
+                <div>
+                    <i class="material-icons">mail</i>
+                    <input type = "email" required id = "email" placeholder = "Email">
+                </div>
+                <div>
+                    <input id = "isAdmin" type="checkbox" name = "User Type" value = "Admin">
+                    <label for = "isAdmin">Admin</label>
+                </div>
+                <input type="submit" value = "Sign Up">
+            </form>
+            <p>Already have an account? <a href = "../pages/Login.html">Login</a></p>
+        </div>
+        <div class = "signup-img">
+            <p>"Access to endless knowledge. Sign up and get started."</p>
+            <img src = "../images/Book-Lover-Bro.svg" alt = "A woman enjoying reading">
+        </div>
+    </div>
+
+    <script src="../js/SignUp.js" type="module"></script>
+</body>
+</html>
